@@ -42,6 +42,20 @@ const tools = [
         owner: { type: 'string' }
       }
     }
+  },
+  {
+    name: 'prompt_risk_review',
+    description: 'Review an AI prompt or task before it is used in operations.',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        operation: { type: 'string' },
+        promptSummary: { type: 'string' },
+        dataTypes: { type: 'array', items: { type: 'string' } },
+        customerFacing: { type: 'boolean' },
+        riskLevel: { type: 'string' }
+      }
+    }
   }
 ];
 
@@ -111,6 +125,34 @@ function callTool(name, args = {}) {
         : ['Confirm no personal data is included.', 'Keep synthetic examples in public issues.'],
       logFields: ['channel', 'customer_facts', 'ai_suggestion', 'human_decision', 'next_action', 'owner'],
       boundary: 'This tool structures notes. It is not an anonymizer and does not store data.'
+    };
+  }
+
+  if (name === 'prompt_risk_review') {
+    const dataTypes = Array.isArray(args.dataTypes) ? args.dataTypes.map(String) : [];
+    const risk = normalizeRisk(args.riskLevel);
+    const dataText = dataTypes.join(' ').toLowerCase();
+    const sensitiveData = dataText.match(/name|email|phone|address|payment|medical|legal|contract|personal|customer/);
+    const shouldStop = risk === 'high' || (args.customerFacing && sensitiveData);
+    return {
+      tool: name,
+      operation: args.operation || 'unspecified operation',
+      recommendation: shouldStop ? 'stop_before_ai_use' : args.customerFacing ? 'human_review_required' : 'review_checklist_required',
+      riskFlags: [
+        ...(args.customerFacing ? ['customer_facing'] : []),
+        ...(sensitiveData ? ['sensitive_data_possible'] : []),
+        ...(risk === 'high' ? ['high_risk'] : [])
+      ],
+      checklist: [
+        'Rewrite the prompt as a short task summary before sending it to AI.',
+        'Remove private customer data unless a reviewed policy allows it.',
+        'Confirm whether the output can affect a customer, payment, contract, or complaint.',
+        'Keep a human review note for the final decision.'
+      ],
+      saferNextStep: shouldStop
+        ? 'Stop and define a human-reviewed data handling rule before using this prompt.'
+        : 'Run the prompt only after documenting data handling and human review expectations.',
+      boundary: 'This tool is a prompt risk helper. It is not legal advice and does not call an AI API.'
     };
   }
 

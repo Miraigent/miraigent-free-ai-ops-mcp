@@ -80,11 +80,29 @@ Route:
 GitHub free tool -> note article -> Miraigent free diagnosis -> Agent Memories
 for repeated customer-operation lessons.
 
+### 4. Prompt Risk Review MCP
+
+Primary hook:
+
+Before sending an operational prompt to AI, check whether the task includes
+customer-facing output or sensitive data.
+
+Why fourth:
+
+- It connects naturally to AI safety and public issue feedback.
+- It is useful before users connect the MCP to real workflows.
+- It supports the message that free MCP tools are review helpers, not full
+  automation.
+
+Route:
+
+GitHub free tool -> Issue feedback about missing risk flags -> Miraigent free
+diagnosis for data-handling and review-rule design.
+
 ## Second Wave Candidates
 
 Publish after the first three tools have public examples and issue feedback.
 
-- Prompt Risk Review MCP
 - Customer Data Masking Checklist MCP
 - Diagnosis Intake Log MCP
 - Decision Log MCP
@@ -217,7 +235,22 @@ CTA:
 Use AI-Safe CRM Notes MCP, then book a Miraigent free diagnosis for real
 workflow design.
 
-### Post 5: Agent Memories Bridge
+### Post 5: Prompt Risk Review
+
+Goal:
+
+Connect free MCP usage to AI safety before automation.
+
+Hook:
+
+Before sending a prompt into AI, check whether it touches customer-facing output
+or sensitive data.
+
+CTA:
+
+Use Prompt Risk Review MCP and open an issue if a risk flag is missing.
+
+### Post 6: Agent Memories Bridge
 
 Goal:
 
@@ -243,6 +276,7 @@ They help teams review AI operations before customer-facing automation:
 - Human Review Gate
 - FAQ Candidate Review
 - AI-Safe CRM Notes
+- Prompt Risk Review
 
 GitHub:
 https://github.com/Miraigent/miraigent-free-ai-ops-mcp
@@ -273,12 +307,21 @@ Please do not include private customer data.
 
 Post 4:
 
+Prompt Risk Review MCP checks whether an operational prompt touches:
+
+- customer-facing output
+- personal data
+- contracts or payments
+- complaints or risk areas
+
+Post 5:
+
 For company-specific support, CRM, or FAQ workflow design, use Miraigent's free
 diagnosis:
 
 https://miraigent.com/diagnosis
 
-Post 5:
+Post 6:
 
 For repeated review lessons and operating decisions, connect the workflow to
 Agent Memories:

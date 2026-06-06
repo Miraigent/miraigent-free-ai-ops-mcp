@@ -10,6 +10,7 @@ before they automate customer-facing work.
 - human_review_gate: decide whether an AI draft should be sent, reviewed, or stopped.
 - faq_candidate_review: turn repeated inquiry patterns into FAQ candidates.
 - ai_safe_crm_note: structure CRM notes without mixing facts, AI suggestions, and human decisions.
+- prompt_risk_review: review an AI prompt or task before it is used in operations.
 
 These tools are public alpha candidates. Please use GitHub issues for bugs,
 unclear outputs, missing fields, and safe public use cases.

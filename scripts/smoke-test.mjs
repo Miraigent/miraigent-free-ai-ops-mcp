@@ -51,6 +51,21 @@ const requests = [
         owner: 'sales'
       }
     }
+  },
+  {
+    jsonrpc: '2.0',
+    id: 6,
+    method: 'tools/call',
+    params: {
+      name: 'prompt_risk_review',
+      arguments: {
+        operation: 'support automation',
+        promptSummary: 'Draft a customer reply from inquiry details.',
+        dataTypes: ['customer email', 'inquiry body'],
+        customerFacing: true,
+        riskLevel: 'medium'
+      }
+    }
   }
 ];
 
@@ -75,7 +90,8 @@ await new Promise((resolve, reject) => {
 const responses = stdout.trim().split('\n').map((line) => JSON.parse(line));
 assert.equal(responses.length, requests.length);
 assert.equal(responses[0].result.serverInfo.name, 'miraigent-free-ai-ops-mcp');
-assert.equal(responses[1].result.tools.length, 3);
+assert.equal(responses[1].result.tools.length, 4);
 assert.match(responses[2].result.content[0].text, /review_required|stop/);
 assert.match(responses[3].result.content[0].text, /public_faq_candidate/);
 assert.match(responses[4].result.content[0].text, /crmNote/);
+assert.match(responses[5].result.content[0].text, /stop_before_ai_use|human_review_required/);
