@@ -1,0 +1,41 @@
+{
+  "name": "@miraigent/free-ai-ops-mcp",
+  "version": "0.1.0",
+  "description": "Free MCP tools for human-reviewed AI operations.",
+  "homepage": "https://github.com/Miraigent/miraigent-free-ai-ops-mcp",
+  "type": "module",
+  "private": false,
+  "license": "MIT",
+  "files": [
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md",
+    "SECURITY.md",
+    "CONTRIBUTING.md",
+    "mcp/",
+    "scripts/"
+  ],
+  "bin": {
+    "miraigent-free-ai-ops-mcp": "mcp/free-ai-ops-server.mjs"
+  },
+  "scripts": {
+    "check": "node --check mcp/free-ai-ops-server.mjs && node --check scripts/smoke-test.mjs && node --check scripts/secret-scan.mjs && node scripts/secret-scan.mjs",
+    "test": "node scripts/smoke-test.mjs",
+    "mcp": "node mcp/free-ai-ops-server.mjs"
+  },
+  "keywords": [
+    "mcp",
+    "ai-operations",
+    "human-review",
+    "ai-safety",
+    "crm",
+    "faq"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Miraigent/miraigent-free-ai-ops-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Miraigent/miraigent-free-ai-ops-mcp/issues"
+  }
+}
