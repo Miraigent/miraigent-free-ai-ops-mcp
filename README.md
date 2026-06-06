@@ -14,6 +14,11 @@ before they automate customer-facing work.
 These tools are public alpha candidates. Please use GitHub issues for bugs,
 unclear outputs, missing fields, and safe public use cases.
 
+## Launch Flow
+
+See LAUNCH_FLOW.md for the first public posting plan, issue collection flow, and
+routes toward Miraigent and Agent Memories.
+
 ## Run
 
     npm run mcp

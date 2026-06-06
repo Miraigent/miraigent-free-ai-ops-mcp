@@ -8,6 +8,7 @@
   "license": "MIT",
   "files": [
     "README.md",
+    "LAUNCH_FLOW.md",
     "LICENSE",
     "CHANGELOG.md",
     "SECURITY.md",
