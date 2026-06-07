@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.1.1] - 2026-06-07
+
+### Added
+
+- Added FREE-004 Human Review Gate examples with JSON-RPC input, expected output,
+  and a sample decision log.
+- Added an example npm script for the human_review_gate workflow.
+
+### Changed
+
+- human_review_gate now returns a decision note and nextLogRow so users can copy
+  the result into the free Gumroad review-gate flow CSV.
+
 ## [0.1.0] - 2026-06-06
 
 ### Added

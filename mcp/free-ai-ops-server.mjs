@@ -74,10 +74,17 @@ function callTool(name, args = {}) {
     const highRisk = riskText.match(/legal|medical|payment|refund|contract|personal|privacy|complaint|public/);
     const sendMode = String(args.sendMode || '').toLowerCase();
     const gateStatus = highRisk ? 'stop' : sendMode.includes('auto') || flags.length ? 'review_required' : 'auto_ok';
+    const decisionNote =
+      gateStatus === 'stop'
+        ? 'Stop before sending. Assign a human owner and confirm the source policy or data-handling rule.'
+        : gateStatus === 'review_required'
+          ? 'Human review is required before this draft can be sent.'
+          : 'Light review is enough if the source facts and tone are current.';
     return {
       tool: name,
       gateStatus,
       reviewOwner: args.reviewOwner || 'human reviewer',
+      decisionNote,
       checklist: [
         'Confirm the draft does not include private customer data.',
         'Confirm the source FAQ or policy is current.',
@@ -85,6 +92,14 @@ function callTool(name, args = {}) {
         'Log the final human decision before sending.'
       ],
       logFields: ['draft_type', 'audience', 'risk_flags', 'review_owner', 'gate_status', 'decision_note'],
+      nextLogRow: {
+        draft_type: args.draftType || 'unspecified draft',
+        audience: args.audience || 'unspecified audience',
+        risk_flags: flags.join('; ') || 'none',
+        review_owner: args.reviewOwner || 'human reviewer',
+        gate_status: gateStatus,
+        decision_note: decisionNote
+      },
       boundary: 'This tool is a review helper. It does not send messages.'
     };
   }

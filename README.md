@@ -26,6 +26,8 @@ the tool separates three outcomes:
 - stop: sensitive, legal, payment, complaint, privacy, or public-facing risks
   should be handled by a person before AI-assisted sending continues.
 
+### Quick MCP Example
+
 Example input:
 
     {
@@ -46,6 +48,9 @@ Expected result:
 
 Use this as a small public proof before building a larger AI support workflow.
 
+See examples/human-review-gate/ for copy-ready JSON-RPC examples and a sample
+decision log that match the free Gumroad kit.
+
 ## Launch Flow
 
 See LAUNCH_FLOW.md for the first public posting plan, issue collection flow, and
@@ -63,6 +68,10 @@ Run checks:
 Direct JSON-RPC smoke call:
 
     printf '%s\n' '{"jsonrpc":"2.0","id":1,"method":"tools/call","params":{"name":"human_review_gate","arguments":{"draftType":"customer support reply","audience":"customer","riskFlags":["refund","complaint","personal data"],"reviewOwner":"support lead","sendMode":"manual"}}}' | npm run mcp
+
+Run the public FREE-004 example:
+
+    npm run example:human-review-gate
 
 ## npm Plan
 

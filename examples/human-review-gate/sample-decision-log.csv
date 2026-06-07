@@ -1,0 +1,2 @@
+draft_type,audience,risk_flags,review_owner,gate_status,decision_note
+customer support reply,customer,refund; complaint; personal data,support lead,stop,Stop before sending. Assign a human owner and confirm the source policy or data-handling rule.

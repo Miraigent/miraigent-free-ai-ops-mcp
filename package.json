@@ -1,6 +1,6 @@
 {
   "name": "@miraigent/free-ai-ops-mcp",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Free MCP tools for human-reviewed AI operations.",
   "homepage": "https://github.com/Miraigent/miraigent-free-ai-ops-mcp",
   "type": "module",
@@ -13,6 +13,7 @@
     "CHANGELOG.md",
     "SECURITY.md",
     "CONTRIBUTING.md",
+    "examples/",
     "mcp/",
     "scripts/"
   ],
@@ -22,6 +23,7 @@
   "scripts": {
     "check": "node --check mcp/free-ai-ops-server.mjs && node --check scripts/smoke-test.mjs && node --check scripts/secret-scan.mjs && node scripts/secret-scan.mjs",
     "test": "node scripts/smoke-test.mjs",
+    "example:human-review-gate": "node examples/human-review-gate/run-example.mjs",
     "mcp": "node mcp/free-ai-ops-server.mjs"
   },
   "keywords": [
