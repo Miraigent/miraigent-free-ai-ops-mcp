@@ -1,13 +1,39 @@
 # Miraigent Free AI Ops MCP
 
-Free public Model Context Protocol (MCP) server for practical AI operations.
+Free public Model Context Protocol (MCP) server for human-reviewed AI
+operations.
 
-This repository starts with small alpha tools that help teams review AI usage
-before they automate customer-facing work.
+Use it when AI drafts, prompts, FAQ candidates, or CRM notes should pass through
+a visible review gate before they reach customers or shared systems.
 
-Use it when a team wants AI drafts, prompts, FAQ candidates, or CRM notes to go
-through a visible human-review gate before they reach customers or shared
-systems.
+## Try It In 30 Seconds
+
+Run the public MCP server:
+
+    npx @miraigent/free-ai-ops-mcp
+
+Then send a JSON-RPC tool call such as the copy-ready example in
+examples/human-review-gate/.
+
+If you only want the spreadsheet/checklist version first, download the free
+review kit:
+
+https://miraigent.gumroad.com/l/human-review-gate-ai-drafts?utm_source=github&utm_medium=readme&utm_campaign=free-ai-ops-mcp-013
+
+## Who This Helps
+
+- Support teams that want AI drafts but still need human review.
+- Operators who need prompt risk checks before using customer or business data.
+- Teams building FAQs before they automate inquiry replies.
+- Builders who want small MCP examples before connecting real workflows.
+
+## What To Do Next
+
+- Try one tool with synthetic data.
+- Open an issue if a risk flag, status, or output field is missing.
+- Use the Gumroad kit when you want CSV/checklist files.
+- Use Agent Memories when repeated review decisions should become reusable
+  operating memory.
 
 ## Alpha Tools
 
@@ -17,7 +43,9 @@ systems.
 - prompt_risk_review: review an AI prompt or task before it is used in operations.
 
 These tools are public alpha candidates. Please use GitHub issues for bugs,
-unclear outputs, missing fields, and safe public use cases.
+unclear outputs, missing fields, and safe public use cases:
+
+https://github.com/Miraigent/miraigent-free-ai-ops-mcp/issues/new/choose
 
 ## Start With One Review Gate
 
@@ -111,4 +139,6 @@ This repository must not publish:
 - Resource hub: https://miraigent.com/resources.html
 - Parent template repository: https://github.com/Miraigent/miraigent-ai-ops-templates
 - Free template library: https://miraigent.com/en/free-ai-operations-templates.html
-- Free Gumroad review kit: https://miraigent.gumroad.com/l/human-review-gate-ai-drafts
+- Agent Memories MCP catalog: https://github.com/Miraigent/Miraigent-agent-memories-mcp-catalog?utm_source=github&utm_medium=readme&utm_campaign=free-ai-ops-mcp-013
+- Agent Memories: https://agentmemories.jp/?utm_source=github&utm_medium=readme&utm_campaign=free-ai-ops-mcp-013
+- Free Gumroad review kit: https://miraigent.gumroad.com/l/human-review-gate-ai-drafts?utm_source=github&utm_medium=readme&utm_campaign=free-ai-ops-mcp-013

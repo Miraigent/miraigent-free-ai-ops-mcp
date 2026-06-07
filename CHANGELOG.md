@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.1.3] - 2026-06-07
+
+### Changed
+
+- Moved the README toward a faster discovery path with a 30-second try step,
+  clearer user pain points, issue CTA, and UTM-marked resource links.
+- Added additional npm discovery keywords for agent memory, AI agents, workflow
+  automation, and review gates.
+
 ## [0.1.2] - 2026-06-07
 
 ### Changed
