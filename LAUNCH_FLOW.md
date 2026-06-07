@@ -2,8 +2,8 @@
 
 This document defines the first public launch flow for Miraigent Free AI Ops MCP.
 
-The goal is to distribute useful free MCP tools, collect public GitHub issues,
-and guide interested users toward Miraigent and Agent Memories.
+The goal is to distribute useful free MCP tools to developers, collect public
+GitHub issues, and guide implementation-heavy users toward Miraigent.
 
 ## Launch Position
 
@@ -21,7 +21,7 @@ The public promise is:
 - keep CRM notes safer
 - collect feedback in GitHub issues
 - connect deeper implementation needs to Miraigent
-- connect reusable operating lessons to Agent Memories
+- keep the npm package focused on developers who can run npm, npx, or MCP tools
 
 ## First Three MCPs
 
@@ -41,8 +41,8 @@ Why first:
 
 Route:
 
-GitHub free tool -> Issue feedback -> Miraigent free diagnosis for company
-workflow design -> Agent Memories for reusable review lessons.
+GitHub/npm free tool -> Issue feedback -> developer adoption -> Miraigent free
+diagnosis for company workflow design.
 
 ### 2. FAQ Candidate Review MCP
 
@@ -59,8 +59,8 @@ Why second:
 
 Route:
 
-GitHub free tool -> Qiita/Zenn example -> Miraigent resource hub -> free
-diagnosis -> Agent Memories for FAQ decision memory.
+GitHub/npm free tool -> Qiita/Zenn example -> Miraigent resource hub -> free
+diagnosis for FAQ and inquiry-flow design.
 
 ### 3. AI-Safe CRM Notes MCP
 
@@ -77,8 +77,8 @@ Why third:
 
 Route:
 
-GitHub free tool -> note article -> Miraigent free diagnosis -> Agent Memories
-for repeated customer-operation lessons.
+GitHub/npm free tool -> implementation article -> Miraigent free diagnosis for
+real CRM/support workflow design.
 
 ### 4. Prompt Risk Review MCP
 
@@ -96,7 +96,7 @@ Why fourth:
 
 Route:
 
-GitHub free tool -> Issue feedback about missing risk flags -> Miraigent free
+GitHub/npm free tool -> Issue feedback about missing risk flags -> Miraigent free
 diagnosis for data-handling and review-rule design.
 
 ## Second Wave Candidates
@@ -162,19 +162,15 @@ Secondary URL:
 
 https://miraigent.com/resources
 
-### Step 4: Agent Memories Route
+### Step 4: Developer Feedback Route
 
-When a user wants repeated review lessons, decisions, and operating notes to be
-reused, route them to Agent Memories.
+When a developer wants another tool, output field, or review status, route them
+to GitHub issues.
 
 CTA language:
 
-If the same review decisions repeat, turn them into reusable operating memory
-with Agent Memories.
-
-Primary URL:
-
-https://agentmemories.jp/
+If your AI agent or workflow needs another review field, open a public-safe
+issue with the expected input and output.
 
 ## Posting Plan
 
@@ -250,20 +246,19 @@ CTA:
 
 Use Prompt Risk Review MCP and open an issue if a risk flag is missing.
 
-### Post 6: Agent Memories Bridge
+### Post 6: Developer Feedback Bridge
 
 Goal:
 
-Connect repeated decisions to Agent Memories.
+Turn developer use cases into public issues.
 
 Hook:
 
-If the same AI review decision repeats, it should become reusable operating
-memory.
+If your AI agent needs a different review field, make the missing field public.
 
 CTA:
 
-Try the free MCP tools, then use Agent Memories for repeated operating lessons.
+Try the free MCP tools, then open an issue for missing fields or statuses.
 
 ## Suggested First Public Thread
 
@@ -323,10 +318,9 @@ https://miraigent.com/diagnosis
 
 Post 6:
 
-For repeated review lessons and operating decisions, connect the workflow to
-Agent Memories:
+If your AI agent needs another review field, open a public-safe issue:
 
-https://agentmemories.jp/
+https://github.com/Miraigent/miraigent-free-ai-ops-mcp/issues/new/choose
 
 ## Success Signals
 
@@ -338,7 +332,6 @@ Early signals:
 - article views
 - resource hub clicks
 - free diagnosis clicks
-- Agent Memories clicks
 
 Do not over-optimize for stars only. Practical issues from real users are more
 valuable.

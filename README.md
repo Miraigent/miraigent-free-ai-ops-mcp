@@ -87,7 +87,7 @@ decision log that match the free Gumroad kit.
 ## Launch Flow
 
 See LAUNCH_FLOW.md for the first public posting plan, issue collection flow, and
-routes toward Miraigent and Agent Memories.
+developer-focused distribution route.
 
 ## Run
 

@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.5] - 2026-06-07
+
+### Changed
+
+- Updated LAUNCH_FLOW.md so the package distribution route stays focused on
+  npm/GitHub developers and issue feedback.
+- Removed remaining Agent Memories consumer routing from the npm package files.
+
 ## [0.1.4] - 2026-06-07
 
 ### Changed
