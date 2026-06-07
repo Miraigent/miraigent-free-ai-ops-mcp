@@ -13,6 +13,11 @@
 - human_review_gate now returns a decision note and nextLogRow so users can copy
   the result into the free Gumroad review-gate flow CSV.
 
+### Fixed
+
+- Kept the MCP initialize server version aligned with the npm package version
+  and added smoke test coverage for that release metadata.
+
 ## [0.1.0] - 2026-06-06
 
 ### Added

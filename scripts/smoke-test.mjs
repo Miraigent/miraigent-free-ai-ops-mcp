@@ -1,5 +1,8 @@
 import { spawn } from 'node:child_process';
 import assert from 'node:assert';
+import { readFile } from 'node:fs/promises';
+
+const packageJson = JSON.parse(await readFile(new URL('../package.json', import.meta.url), 'utf8'));
 
 const child = spawn(process.execPath, ['mcp/free-ai-ops-server.mjs'], {
   stdio: ['pipe', 'pipe', 'inherit']
@@ -90,6 +93,7 @@ await new Promise((resolve, reject) => {
 const responses = stdout.trim().split('\n').map((line) => JSON.parse(line));
 assert.equal(responses.length, requests.length);
 assert.equal(responses[0].result.serverInfo.name, 'miraigent-free-ai-ops-mcp');
+assert.equal(responses[0].result.serverInfo.version, packageJson.version);
 assert.equal(responses[1].result.tools.length, 4);
 assert.match(responses[2].result.content[0].text, /review_required|stop/);
 assert.match(responses[2].result.content[0].text, /nextLogRow/);

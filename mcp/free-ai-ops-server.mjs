@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+const serverInfo = { name: 'miraigent-free-ai-ops-mcp', version: '0.1.1' };
+
 const tools = [
   {
     name: 'human_review_gate',
@@ -179,7 +181,7 @@ function handle(request) {
     return {
       protocolVersion: '2024-11-05',
       capabilities: { tools: {} },
-      serverInfo: { name: 'miraigent-free-ai-ops-mcp', version: '0.1.0' }
+      serverInfo
     };
   }
 
