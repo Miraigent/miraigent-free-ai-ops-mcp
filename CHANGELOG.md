@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.1.4] - 2026-06-07
+
+### Changed
+
+- Repositioned the npm package toward developers, indie hackers, MCP builders,
+  and AI automation builders instead of general creator/audience messaging.
+- Removed Agent Memories consumer links from the npm README so the channel
+  matches npm users.
+- Updated npm metadata to emphasize human-in-the-loop developer tooling.
+
 ## [0.1.3] - 2026-06-07
 
 ### Changed
