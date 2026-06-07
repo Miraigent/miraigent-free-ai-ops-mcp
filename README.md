@@ -15,6 +15,37 @@ before they automate customer-facing work.
 These tools are public alpha candidates. Please use GitHub issues for bugs,
 unclear outputs, missing fields, and safe public use cases.
 
+## Start With One Review Gate
+
+The first practical use case is a review gate for AI-drafted customer replies.
+Before a team lets an AI draft leave a help desk, inbox, form workflow, or CRM,
+the tool separates three outcomes:
+
+- auto_ok: low-risk internal or routine copy can continue.
+- review_required: a human should review the draft before it is sent.
+- stop: sensitive, legal, payment, complaint, privacy, or public-facing risks
+  should be handled by a person before AI-assisted sending continues.
+
+Example input:
+
+    {
+      "draftType": "customer support reply",
+      "audience": "customer",
+      "riskFlags": ["refund", "complaint", "personal data"],
+      "reviewOwner": "support lead",
+      "sendMode": "manual"
+    }
+
+Expected result:
+
+    {
+      "gateStatus": "stop",
+      "reviewOwner": "support lead",
+      "boundary": "This tool is a review helper. It does not send messages."
+    }
+
+Use this as a small public proof before building a larger AI support workflow.
+
 ## Launch Flow
 
 See LAUNCH_FLOW.md for the first public posting plan, issue collection flow, and
@@ -28,6 +59,10 @@ Run checks:
 
     npm run check
     npm test
+
+Direct JSON-RPC smoke call:
+
+    printf '%s\n' '{"jsonrpc":"2.0","id":1,"method":"tools/call","params":{"name":"human_review_gate","arguments":{"draftType":"customer support reply","audience":"customer","riskFlags":["refund","complaint","personal data"],"reviewOwner":"support lead","sendMode":"manual"}}}' | npm run mcp
 
 ## npm Plan
 
@@ -62,3 +97,4 @@ This repository must not publish:
 - Resource hub: https://miraigent.com/resources.html
 - Parent template repository: https://github.com/Miraigent/miraigent-ai-ops-templates
 - Free template library: https://miraigent.com/en/free-ai-operations-templates.html
+- Free Gumroad review kit: https://miraigent.gumroad.com/l/human-review-gate-ai-drafts
