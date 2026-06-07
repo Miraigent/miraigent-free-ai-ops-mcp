@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.2] - 2026-06-07
+
+### Changed
+
+- Improved npm discovery metadata with Model Context Protocol, MCP server,
+  support automation, prompt risk, and FAQ review keywords.
+- Clarified README positioning and added the live npx command.
+
 ## [0.1.1] - 2026-06-07
 
 ### Added

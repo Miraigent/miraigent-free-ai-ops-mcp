@@ -1,7 +1,7 @@
 {
   "name": "@miraigent/free-ai-ops-mcp",
-  "version": "0.1.1",
-  "description": "Free MCP tools for human-reviewed AI operations.",
+  "version": "0.1.2",
+  "description": "Free Model Context Protocol MCP server for human review gates, prompt risk checks, FAQ review, and AI support operations.",
   "homepage": "https://github.com/Miraigent/miraigent-free-ai-ops-mcp",
   "type": "module",
   "private": false,
@@ -28,8 +28,14 @@
   },
   "keywords": [
     "mcp",
+    "mcp-server",
+    "model-context-protocol",
     "ai-operations",
     "human-review",
+    "support-automation",
+    "customer-support",
+    "prompt-risk",
+    "faq-review",
     "ai-safety",
     "crm",
     "faq"

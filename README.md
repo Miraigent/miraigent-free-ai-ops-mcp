@@ -1,9 +1,13 @@
 # Miraigent Free AI Ops MCP
 
-Free public MCP tools for practical AI operations.
+Free public Model Context Protocol (MCP) server for practical AI operations.
 
 This repository starts with small alpha tools that help teams review AI usage
 before they automate customer-facing work.
+
+Use it when a team wants AI drafts, prompts, FAQ candidates, or CRM notes to go
+through a visible human-review gate before they reach customers or shared
+systems.
 
 ## Alpha Tools
 
@@ -60,6 +64,10 @@ routes toward Miraigent and Agent Memories.
 
     npm run mcp
 
+Run from npm:
+
+    npx @miraigent/free-ai-ops-mcp
+
 Run checks:
 
     npm run check
@@ -73,16 +81,13 @@ Run the public FREE-004 example:
 
     npm run example:human-review-gate
 
-## npm Plan
+## npm Package
 
 Package name: @miraigent/free-ai-ops-mcp
 
-Expected command after npm publication:
+Command:
 
     npx @miraigent/free-ai-ops-mcp
-
-Publishing requires an authenticated npm account with access to the @miraigent
-scope.
 
 ## Public Boundary
 
