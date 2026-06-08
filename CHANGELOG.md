@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.1.6] - 2026-06-08
+
+### Added
+
+- Added a Tried It feedback issue template for users who run the MCP package and
+  want to report setup friction, unclear JSON-RPC input, or confusing output.
+
+### Changed
+
+- Added direct README links for Tried It feedback, workflow requests, and bug
+  reports so GitHub visitors have a clearer next action after running npx.
+
 ## [0.1.5] - 2026-06-07
 
 ### Changed

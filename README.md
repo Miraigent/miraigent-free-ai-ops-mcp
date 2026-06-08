@@ -32,9 +32,17 @@ https://miraigent.gumroad.com/l/human-review-gate-ai-drafts?utm_source=github&ut
 ## What To Do Next
 
 - Try one tool with synthetic data.
-- Open an issue if a risk flag, status, or output field is missing.
+- Share what happened in the Tried It feedback issue if setup, JSON-RPC input,
+  or the returned gate decision was unclear.
+- Open a workflow request if a risk flag, status, or output field is missing.
 - Use the Gumroad kit only if you want CSV/checklist files instead of npm.
 - Adapt the review-gate fields before connecting private systems or real users.
+
+Issue entry points:
+
+- Tried It feedback: https://github.com/Miraigent/miraigent-free-ai-ops-mcp/issues/new?template=tried_it_feedback.md
+- Workflow request: https://github.com/Miraigent/miraigent-free-ai-ops-mcp/issues/new?template=free_mcp_candidate_request.md
+- Bug report: https://github.com/Miraigent/miraigent-free-ai-ops-mcp/issues/new?template=free_mcp_bug_report.md
 
 ## Alpha Tools
 
