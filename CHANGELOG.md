@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.7] - 2026-06-10
+
+### Added
+
+- Added Claude Desktop and Cursor MCP configuration example to README so
+  developers can copy-paste the mcpServers block directly.
+- Added npm keywords: claude-desktop, cursor-mcp, mcp-tools, ai-agent-tools, npx.
+
 ## [0.1.6] - 2026-06-08
 
 ### Added

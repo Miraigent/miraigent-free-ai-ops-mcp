@@ -21,6 +21,28 @@ first, download the free review kit:
 
 https://miraigent.gumroad.com/l/human-review-gate-ai-drafts?utm_source=github&utm_medium=readme&utm_campaign=free-ai-ops-mcp-013
 
+## Use With Claude Desktop or Cursor
+
+Add to your `claude_desktop_config.json` or Cursor MCP settings:
+
+    {
+      "mcpServers": {
+        "miraigent-free-ai-ops-mcp": {
+          "command": "npx",
+          "args": ["-y", "@miraigent/free-ai-ops-mcp"]
+        }
+      }
+    }
+
+After restarting Claude Desktop or Cursor, the four tools
+(`human_review_gate`, `faq_candidate_review`, `ai_safe_crm_note`,
+`prompt_risk_review`) will be available in the MCP tools panel.
+
+Claude Desktop config location:
+
+- macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
+- Windows: `%APPDATA%\Claude\claude_desktop_config.json`
+
 ## Who This Helps
 
 - Developers adding review gates to AI agents or MCP tools.
