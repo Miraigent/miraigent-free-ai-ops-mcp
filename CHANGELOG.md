@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.1.8] - 2026-06-12
+
+### Added
+
+- Added a copy-ready prompt_risk_review example for developers checking
+  customer-facing prompts before AI use.
+- Added README input/output for the prompt risk workflow and a matching npm
+  example script.
+
 ## [0.1.7] - 2026-06-10
 
 ### Added

@@ -1,0 +1,1 @@
+{"jsonrpc":"2.0","id":1,"method":"tools/call","params":{"name":"prompt_risk_review","arguments":{"operation":"support automation","promptSummary":"Draft a customer reply from inquiry details and suggest the next support step.","dataTypes":["customer email","inquiry body","plan name"],"customerFacing":true,"riskLevel":"medium"}}}

@@ -114,6 +114,35 @@ Use this as a small public proof before building a larger AI support workflow.
 See examples/human-review-gate/ for copy-ready JSON-RPC examples and a sample
 decision log that match the free Gumroad kit.
 
+## Check A Prompt Before AI Use
+
+Use prompt_risk_review before a support, CRM, FAQ, or workflow prompt is sent to
+AI. It helps developers decide whether a prompt can proceed with a checklist,
+needs human review, or should stop before use because it touches sensitive data
+or customer-facing output.
+
+Example input:
+
+    {
+      "operation": "support automation",
+      "promptSummary": "Draft a customer reply from inquiry details and suggest the next support step.",
+      "dataTypes": ["customer email", "inquiry body", "plan name"],
+      "customerFacing": true,
+      "riskLevel": "medium"
+    }
+
+Expected result:
+
+    {
+      "recommendation": "human_review_required",
+      "riskFlags": ["customer_facing", "sensitive_data_possible"],
+      "boundary": "This tool is a prompt risk helper. It is not legal advice and does not call an AI API."
+    }
+
+Run the copy-ready example:
+
+    npm run example:prompt-risk-review
+
 ## Launch Flow
 
 See LAUNCH_FLOW.md for the first public posting plan, issue collection flow, and
@@ -139,6 +168,10 @@ Direct JSON-RPC smoke call:
 Run the public FREE-004 example:
 
     npm run example:human-review-gate
+
+Run the prompt risk review example:
+
+    npm run example:prompt-risk-review
 
 ## npm Package
 
