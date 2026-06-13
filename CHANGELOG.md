@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.1.9] - 2026-06-13
+
+### Added
+
+- Added a copy-ready JSON-RPC MCP session example so developers can verify
+  initialize, tools/list, and a human_review_gate call before integrating with a
+  desktop MCP client.
+- Added README guidance for using the session example as a public-safe smoke
+  test when opening GitHub issues.
+
 ## [0.1.8] - 2026-06-12
 
 ### Added

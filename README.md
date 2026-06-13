@@ -16,6 +16,9 @@ Run the public MCP server:
 Then send a JSON-RPC tool call such as the copy-ready example in
 examples/human-review-gate/.
 
+For a complete public-safe MCP session that covers initialize, tools/list, and
+one tool call, see examples/mcp-json-rpc-session/.
+
 If you are not a developer and only want the spreadsheet/checklist version
 first, download the free review kit:
 
@@ -113,6 +116,23 @@ Use this as a small public proof before building a larger AI support workflow.
 
 See examples/human-review-gate/ for copy-ready JSON-RPC examples and a sample
 decision log that match the free Gumroad kit.
+
+## Copy-Ready MCP Session
+
+Use this when you want to confirm the package responds like an MCP server before
+connecting it to Claude Desktop, Cursor, or your own MCP client:
+
+    npm run mcp < examples/mcp-json-rpc-session/sample-session.jsonl
+
+The session sends three JSON-RPC messages:
+
+- initialize: confirms protocolVersion, capabilities, and serverInfo.
+- tools/list: confirms the four public alpha tools are visible.
+- tools/call: runs human_review_gate with synthetic support-reply data.
+
+If you open a GitHub issue, copy only synthetic input shapes and returned status
+fields. Do not paste private customer records, secrets, tokens, internal policy
+text, or MIRAI Memory behavior.
 
 ## Check A Prompt Before AI Use
 
