@@ -54,6 +54,20 @@ Claude Desktop config location:
 - Teams prototyping human-in-the-loop AI workflows before integrating real data.
 - Operators who can run npm/npx and want a small public MCP example.
 
+## Pick Your First Tool
+
+Start with the tool that matches the first unsafe handoff in your workflow:
+
+- AI draft may reach a customer: use `human_review_gate`.
+- Repeated support questions should become a public FAQ: use
+  `faq_candidate_review`.
+- CRM notes mix facts, AI suggestions, and human decisions: use
+  `ai_safe_crm_note`.
+- A prompt may touch customer data or public output: use `prompt_risk_review`.
+
+All examples use synthetic data. Keep private customer records, secrets,
+internal policy text, and paid product files out of public issues and screenshots.
+
 ## What To Do Next
 
 - Try one tool with synthetic data.

@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.10] - 2026-06-14
+
+### Changed
+
+- Added a README tool picker so npm/GitHub visitors can choose the first MCP
+  tool by workflow risk before opening issues or integrating the package.
+
 ## [0.1.9] - 2026-06-13
 
 ### Added
