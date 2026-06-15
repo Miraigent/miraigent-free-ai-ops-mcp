@@ -19,8 +19,17 @@ examples/human-review-gate/.
 For a complete public-safe MCP session that covers initialize, tools/list, and
 one tool call, see examples/mcp-json-rpc-session/.
 
-If you are not a developer and only want the spreadsheet/checklist version
-first, download the free review kit:
+If the result is unclear, open a Tried It feedback issue with synthetic input
+only. A useful issue can be as small as:
+
+- the tool you ran
+- the returned status or field that was confusing
+- the review rule, risk flag, or example that would make the next run easier
+
+https://github.com/Miraigent/miraigent-free-ai-ops-mcp/issues/new?template=tried_it_feedback.md
+
+If you are not a developer and only want the spreadsheet/checklist version after
+seeing the MCP example, download the free review kit:
 
 https://miraigent.gumroad.com/l/human-review-gate-ai-drafts?utm_source=github&utm_medium=readme&utm_campaign=free-ai-ops-mcp-013
 
@@ -71,10 +80,13 @@ internal policy text, and paid product files out of public issues and screenshot
 ## What To Do Next
 
 - Try one tool with synthetic data.
+- If you ran `npx @miraigent/free-ai-ops-mcp`, paste the public-safe result
+  shape into the Tried It feedback issue.
 - Share what happened in the Tried It feedback issue if setup, JSON-RPC input,
   or the returned gate decision was unclear.
 - Open a workflow request if a risk flag, status, or output field is missing.
-- Use the Gumroad kit only if you want CSV/checklist files instead of npm.
+- Use the Gumroad kit after the MCP example if you want CSV/checklist files
+  instead of npm.
 - Adapt the review-gate fields before connecting private systems or real users.
 
 Issue entry points:
