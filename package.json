@@ -1,6 +1,6 @@
 {
   "name": "@miraigent/free-ai-ops-mcp",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "Free MCP server for developers adding human review gates, prompt risk checks, FAQ review, and CRM note safety to AI tools.",
   "homepage": "https://github.com/Miraigent/miraigent-free-ai-ops-mcp",
   "type": "module",
@@ -25,6 +25,7 @@
     "test": "node scripts/smoke-test.mjs",
     "example:human-review-gate": "node examples/human-review-gate/run-example.mjs",
     "example:prompt-risk-review": "node examples/prompt-risk-review/run-example.mjs",
+    "example:faq-candidate-review": "node examples/faq-candidate-review/run-example.mjs",
     "mcp": "node mcp/free-ai-ops-server.mjs"
   },
   "keywords": [

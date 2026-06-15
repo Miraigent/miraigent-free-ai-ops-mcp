@@ -1,0 +1,1 @@
+{"jsonrpc":"2.0","id":1,"method":"tools/call","params":{"name":"faq_candidate_review","arguments":{"inquiryPattern":"customers ask which pricing plan includes setup support","frequency":"high","responseCost":"medium","riskLevel":"low","currentAnswer":"Setup support is included in the team plan. Solo plans use the public setup checklist."}}}

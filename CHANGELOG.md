@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.11] - 2026-06-15
+
+### Added
+
+- Added a copy-ready faq_candidate_review example so developers can test the
+  repeated-support-question to FAQ candidate path before opening workflow
+  requests or connecting private support data.
+
 ## [0.1.10] - 2026-06-14
 
 ### Changed

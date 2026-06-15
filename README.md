@@ -74,6 +74,12 @@ Start with the tool that matches the first unsafe handoff in your workflow:
   `ai_safe_crm_note`.
 - A prompt may touch customer data or public output: use `prompt_risk_review`.
 
+Copy-ready examples:
+
+- Human review gate: `npm run example:human-review-gate`
+- FAQ candidate review: `npm run example:faq-candidate-review`
+- Prompt risk review: `npm run example:prompt-risk-review`
+
 All examples use synthetic data. Keep private customer records, secrets,
 internal policy text, and paid product files out of public issues and screenshots.
 
@@ -218,6 +224,10 @@ Run the public FREE-004 example:
 Run the prompt risk review example:
 
     npm run example:prompt-risk-review
+
+Run the FAQ candidate review example:
+
+    npm run example:faq-candidate-review
 
 ## npm Package
 
