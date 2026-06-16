@@ -55,6 +55,26 @@ Claude Desktop config location:
 - macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
 - Windows: `%APPDATA%\Claude\claude_desktop_config.json`
 
+## What Success Looks Like
+
+Use this quick check before connecting private systems or opening an issue:
+
+- The MCP client starts `miraigent-free-ai-ops-mcp` without credentials.
+- `tools/list` shows four public alpha tools:
+  `human_review_gate`, `faq_candidate_review`, `ai_safe_crm_note`, and
+  `prompt_risk_review`.
+- A support-reply review returns one of `auto_ok`, `review_required`, or
+  `stop`, plus a `boundary` note that confirms the package does not send
+  messages.
+- A prompt review returns `proceed_with_checklist`,
+  `human_review_required`, or `stop_before_ai_use` before any real customer
+  data is used.
+
+If one of those checks fails, open a Tried It feedback issue with the command
+you ran, the public-safe input shape, and the returned status field. Do not
+paste private customer records, secrets, internal policy text, or paid product
+files.
+
 ## Who This Helps
 
 - Developers adding review gates to AI agents or MCP tools.

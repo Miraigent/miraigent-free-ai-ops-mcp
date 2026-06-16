@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.12] - 2026-06-16
+
+### Changed
+
+- Added a README success-check section so first-time npm/npx and GitHub users
+  can verify the MCP server, visible tools, and returned gate statuses before
+  opening feedback issues or connecting private workflows.
+
 ## [0.1.11] - 2026-06-15
 
 ### Added
