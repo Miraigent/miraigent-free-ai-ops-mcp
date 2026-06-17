@@ -75,6 +75,27 @@ you ran, the public-safe input shape, and the returned status field. Do not
 paste private customer records, secrets, internal policy text, or paid product
 files.
 
+## Copy A Useful Feedback Result
+
+When you open a Tried It feedback issue, the most useful report is the smallest
+public-safe result shape that shows where the review gate helped or felt unclear.
+
+Good public-safe issue body:
+
+    Command: npx @miraigent/free-ai-ops-mcp
+    Tool: human_review_gate
+    Input shape:
+      draftType: customer support reply
+      audience: customer
+      riskFlags: refund; complaint; personal data
+      sendMode: manual
+    Returned status: stop
+    Confusing part: I expected review_required, but stop may be correct because refund and personal data were both present.
+    Requested improvement: Add one sentence explaining why stop is stronger than review_required.
+
+Keep the report synthetic. Replace names, emails, customer text, internal policy
+text, and private CRM notes with short labels before posting.
+
 ## Who This Helps
 
 - Developers adding review gates to AI agents or MCP tools.

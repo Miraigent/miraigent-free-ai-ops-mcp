@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.13] - 2026-06-17
+
+### Changed
+
+- Added a README feedback-result example so developers who try the npx package
+  can open safer, more actionable GitHub issues with synthetic input shapes and
+  returned status fields.
+
 ## [0.1.12] - 2026-06-16
 
 ### Changed
