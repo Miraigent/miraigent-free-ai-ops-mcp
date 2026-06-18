@@ -19,6 +19,24 @@ examples/human-review-gate/.
 For a complete public-safe MCP session that covers initialize, tools/list, and
 one tool call, see examples/mcp-json-rpc-session/.
 
+## One-Command Public Smoke Test
+
+Use this when you want to confirm the npm package works before editing a desktop
+MCP client config:
+
+    npx -y @miraigent/free-ai-ops-mcp < examples/mcp-json-rpc-session/sample-session.jsonl
+
+The response should include:
+
+- serverInfo.name: miraigent-free-ai-ops-mcp
+- tools/list with four tools
+- human_review_gate returning `stop` for the synthetic refund/complaint/personal
+  data example
+
+This is the fastest public proof path for npm and GitHub users. If the command
+starts but the returned status is confusing, open a Tried It feedback issue with
+the command, synthetic input shape, and returned status only.
+
 If the result is unclear, open a Tried It feedback issue with synthetic input
 only. A useful issue can be as small as:
 

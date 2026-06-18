@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.1.14] - 2026-06-18
+
+### Changed
+
+- Added a one-command npx smoke-test path to README so npm and GitHub visitors
+  can verify the public MCP JSON-RPC session before editing desktop client
+  settings.
+- Added npm discovery keywords for JSON-RPC and MCP JSON-RPC searches.
+
 ## [0.1.13] - 2026-06-17
 
 ### Changed
