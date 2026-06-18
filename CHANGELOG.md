@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.15] - 2026-06-18
+
+### Fixed
+
+- Added a shorter `free-ai-ops-mcp` bin alias while keeping the existing
+  `miraigent-free-ai-ops-mcp` command so scoped npm/npx users have a more
+  reliable explicit command path.
+
 ## [0.1.14] - 2026-06-18
 
 ### Changed

@@ -37,6 +37,9 @@ This is the fastest public proof path for npm and GitHub users. If the command
 starts but the returned status is confusing, open a Tried It feedback issue with
 the command, synthetic input shape, and returned status only.
 
+The package also exposes `free-ai-ops-mcp` and `miraigent-free-ai-ops-mcp` as
+bin aliases for npm exec environments that require an explicit command name.
+
 If the result is unclear, open a Tried It feedback issue with synthetic input
 only. A useful issue can be as small as:
 
