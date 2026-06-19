@@ -11,7 +11,7 @@ reaches customers or shared systems.
 
 Run the public MCP server:
 
-    npx @miraigent/free-ai-ops-mcp
+    npx -y free-ai-ops-mcp@npm:@miraigent/free-ai-ops-mcp
 
 Then send a JSON-RPC tool call such as the copy-ready example in
 examples/human-review-gate/.
@@ -24,7 +24,7 @@ one tool call, see examples/mcp-json-rpc-session/.
 Use this when you want to confirm the npm package works before editing a desktop
 MCP client config:
 
-    npx -y @miraigent/free-ai-ops-mcp < examples/mcp-json-rpc-session/sample-session.jsonl
+    npx -y free-ai-ops-mcp@npm:@miraigent/free-ai-ops-mcp < examples/mcp-json-rpc-session/sample-session.jsonl
 
 The response should include:
 
@@ -37,8 +37,12 @@ This is the fastest public proof path for npm and GitHub users. If the command
 starts but the returned status is confusing, open a Tried It feedback issue with
 the command, synthetic input shape, and returned status only.
 
-The package also exposes `free-ai-ops-mcp` and `miraigent-free-ai-ops-mcp` as
-bin aliases for npm exec environments that require an explicit command name.
+If you are checking the package from npm search, run the public help first:
+
+    npx -y free-ai-ops-mcp@npm:@miraigent/free-ai-ops-mcp --help
+
+The help output lists the available MCP tools, the one-command smoke test, and
+the public-safe boundary before you send any JSON-RPC input.
 
 If the result is unclear, open a Tried It feedback issue with synthetic input
 only. A useful issue can be as small as:
@@ -62,7 +66,7 @@ Add to your `claude_desktop_config.json` or Cursor MCP settings:
       "mcpServers": {
         "miraigent-free-ai-ops-mcp": {
           "command": "npx",
-          "args": ["-y", "@miraigent/free-ai-ops-mcp"]
+          "args": ["-y", "free-ai-ops-mcp@npm:@miraigent/free-ai-ops-mcp"]
         }
       }
     }
@@ -103,7 +107,7 @@ public-safe result shape that shows where the review gate helped or felt unclear
 
 Good public-safe issue body:
 
-    Command: npx @miraigent/free-ai-ops-mcp
+    Command: npx -y free-ai-ops-mcp@npm:@miraigent/free-ai-ops-mcp
     Tool: human_review_gate
     Input shape:
       draftType: customer support reply
@@ -148,7 +152,7 @@ internal policy text, and paid product files out of public issues and screenshot
 ## What To Do Next
 
 - Try one tool with synthetic data.
-- If you ran `npx @miraigent/free-ai-ops-mcp`, paste the public-safe result
+- If you ran `npx -y free-ai-ops-mcp@npm:@miraigent/free-ai-ops-mcp`, paste the public-safe result
   shape into the Tried It feedback issue.
 - Share what happened in the Tried It feedback issue if setup, JSON-RPC input,
   or the returned gate decision was unclear.
@@ -268,7 +272,7 @@ developer-focused distribution route.
 
 Run from npm:
 
-    npx @miraigent/free-ai-ops-mcp
+    npx -y free-ai-ops-mcp@npm:@miraigent/free-ai-ops-mcp
 
 Run checks:
 
@@ -297,7 +301,7 @@ Package name: @miraigent/free-ai-ops-mcp
 
 Command:
 
-    npx @miraigent/free-ai-ops-mcp
+    npx -y free-ai-ops-mcp@npm:@miraigent/free-ai-ops-mcp
 
 ## Public Boundary
 

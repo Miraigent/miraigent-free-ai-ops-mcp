@@ -1,5 +1,36 @@
 # Changelog
 
+## [0.1.19] - 2026-06-19
+
+### Fixed
+
+- Updated README, help output, and MCP client config examples to the verified
+  npm alias command `npx -y free-ai-ops-mcp@npm:@miraigent/free-ai-ops-mcp`,
+  which resolves the scoped package binary consistently in public tests.
+
+## [0.1.18] - 2026-06-19
+
+### Fixed
+
+- Replaced the direct scoped-package `npx @miraigent/free-ai-ops-mcp` README
+  path with the verified `npm exec --package ... -- free-ai-ops-mcp` command so
+  npm users get a reliable public run path.
+
+## [0.1.17] - 2026-06-19
+
+### Fixed
+
+- Restored the package to a single npm bin entry so `npx
+  @miraigent/free-ai-ops-mcp` resolves to the default command reliably.
+
+## [0.1.16] - 2026-06-19
+
+### Added
+
+- Added a public `--help` path for npm/npx users so package search visitors can
+  see the available MCP tools, one-command smoke test, safety boundary, and
+  feedback route before sending JSON-RPC input.
+
 ## [0.1.15] - 2026-06-18
 
 ### Fixed

@@ -4,6 +4,27 @@ import { readFile } from 'node:fs/promises';
 
 const packageJson = JSON.parse(await readFile(new URL('../package.json', import.meta.url), 'utf8'));
 
+const helpChild = spawn(process.execPath, ['mcp/free-ai-ops-server.mjs', '--help'], {
+  stdio: ['ignore', 'pipe', 'inherit']
+});
+
+let helpStdout = '';
+helpChild.stdout.on('data', (chunk) => {
+  helpStdout += chunk;
+});
+
+await new Promise((resolve, reject) => {
+  helpChild.on('error', reject);
+  helpChild.on('close', (code) => {
+    if (code !== 0) reject(new Error('help exited with ' + code));
+    else resolve();
+  });
+});
+
+assert.match(helpStdout, /npx -y free-ai-ops-mcp@npm:@miraigent\/free-ai-ops-mcp/);
+assert.match(helpStdout, /human_review_gate/);
+assert.match(helpStdout, /Do not paste secrets/);
+
 const child = spawn(process.execPath, ['mcp/free-ai-ops-server.mjs'], {
   stdio: ['pipe', 'pipe', 'inherit']
 });

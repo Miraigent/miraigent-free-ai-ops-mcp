@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const serverInfo = { name: 'miraigent-free-ai-ops-mcp', version: '0.1.15' };
+const serverInfo = { name: 'miraigent-free-ai-ops-mcp', version: '0.1.19' };
 
 const tools = [
   {
@@ -63,6 +63,30 @@ const tools = [
 
 function textContent(value) {
   return [{ type: 'text', text: JSON.stringify(value, null, 2) }];
+}
+
+function printHelp() {
+  process.stdout.write(`Miraigent Free AI Ops MCP ${serverInfo.version}
+
+Run the public MCP server:
+  npx -y free-ai-ops-mcp@npm:@miraigent/free-ai-ops-mcp
+
+Run a copy-ready public smoke test:
+  npx -y free-ai-ops-mcp@npm:@miraigent/free-ai-ops-mcp < examples/mcp-json-rpc-session/sample-session.jsonl
+
+Available tools:
+  human_review_gate      Stop/review/approve AI drafts before sending
+  faq_candidate_review   Review repeated questions before FAQ publication
+  ai_safe_crm_note       Separate facts, AI suggestions, human decisions, and next actions
+  prompt_risk_review     Check customer-facing or sensitive prompts before AI use
+
+Public-safe boundary:
+  Use synthetic examples only. Do not paste secrets, customer records,
+  internal policy text, paid product files, or private memory behavior.
+
+Feedback:
+  https://github.com/Miraigent/miraigent-free-ai-ops-mcp/issues/new/choose
+`);
 }
 
 function normalizeRisk(value) {
@@ -195,6 +219,11 @@ function handle(request) {
   }
 
   throw new Error('Unsupported method: ' + request.method);
+}
+
+if (process.argv.includes('--help') || process.argv.includes('-h')) {
+  printHelp();
+  process.exit(0);
 }
 
 let buffer = '';
