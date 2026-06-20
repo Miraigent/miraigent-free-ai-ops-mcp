@@ -144,6 +144,7 @@ Copy-ready examples:
 
 - Human review gate: `npm run example:human-review-gate`
 - FAQ candidate review: `npm run example:faq-candidate-review`
+- AI-safe CRM note: `npm run example:ai-safe-crm-note`
 - Prompt risk review: `npm run example:prompt-risk-review`
 
 All examples use synthetic data. Keep private customer records, secrets,
@@ -294,6 +295,10 @@ Run the prompt risk review example:
 Run the FAQ candidate review example:
 
     npm run example:faq-candidate-review
+
+Run the AI-safe CRM note example:
+
+    npm run example:ai-safe-crm-note
 
 ## npm Package
 

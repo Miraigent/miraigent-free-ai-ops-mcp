@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const serverInfo = { name: 'miraigent-free-ai-ops-mcp', version: '0.1.19' };
+const serverInfo = { name: 'miraigent-free-ai-ops-mcp', version: '0.1.20' };
 
 const tools = [
   {

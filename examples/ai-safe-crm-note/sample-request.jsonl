@@ -1,0 +1,1 @@
+{"jsonrpc":"2.0","id":1,"method":"tools/call","params":{"name":"ai_safe_crm_note","arguments":{"rawNoteSummary":"Customer asked whether setup can start this week and wants the checklist before the kickoff call.","channel":"contact form","containsPersonalData":false,"nextAction":"send setup checklist and confirm kickoff date","owner":"sales operations"}}}

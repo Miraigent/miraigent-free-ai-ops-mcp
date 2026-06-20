@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.20] - 2026-06-20
+
+### Added
+
+- Added a copy-ready ai_safe_crm_note example so developers can test separating
+  customer facts, AI suggestions, human decisions, and next actions before
+  connecting private CRM notes.
+
 ## [0.1.19] - 2026-06-19
 
 ### Fixed
