@@ -80,6 +80,26 @@ Claude Desktop config location:
 - macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
 - Windows: `%APPDATA%\Claude\claude_desktop_config.json`
 
+## MCP Client Troubleshooting Checklist
+
+If the package runs from the terminal but does not appear inside Claude Desktop,
+Cursor, or another MCP client, check the connection in this order:
+
+- Run `npx -y free-ai-ops-mcp@npm:@miraigent/free-ai-ops-mcp --help` in the
+  same shell account that launches the MCP client.
+- Confirm the client config uses `command: "npx"` and the exact args shown in
+  this README.
+- Restart the MCP client after saving the config. Most desktop clients read MCP
+  server config only on startup.
+- Run the one-command smoke test with the public JSON-RPC session before
+  changing private workflows.
+- If `tools/list` works in the terminal but not in the client, open a Tried It
+  feedback issue with the client name, operating system, command shape, and the
+  returned public-safe status fields.
+
+Do not paste real customer records, secrets, internal policy text, paid product
+files, or private memory behavior into client logs or GitHub issues.
+
 ## What Success Looks Like
 
 Use this quick check before connecting private systems or opening an issue:

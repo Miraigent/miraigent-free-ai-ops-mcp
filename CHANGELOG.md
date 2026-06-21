@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.21] - 2026-06-21
+
+### Changed
+
+- Added an MCP client troubleshooting checklist to README so Claude Desktop,
+  Cursor, and other MCP users can separate terminal package success from client
+  configuration issues before opening public-safe feedback issues.
+
 ## [0.1.20] - 2026-06-20
 
 ### Added
