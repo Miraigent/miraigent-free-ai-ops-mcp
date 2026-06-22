@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.22] - 2026-06-22
+
+### Changed
+
+- Added response-reading guidance to the MCP JSON-RPC session example so npm and
+  GitHub users can tell whether the package is running before debugging desktop
+  MCP client configuration.
+
 ## [0.1.21] - 2026-06-21
 
 ### Changed

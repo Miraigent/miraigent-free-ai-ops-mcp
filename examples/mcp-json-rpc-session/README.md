@@ -23,6 +23,23 @@ include a human_review_gate result with:
 - reviewOwner: support lead
 - boundary: this tool is a review helper and does not send messages
 
+## Read The Responses
+
+Use the response shape as a quick acceptance check before changing a desktop MCP
+client config:
+
+- Response 1 should include `serverInfo.name` set to
+  `miraigent-free-ai-ops-mcp`.
+- Response 2 should include four tool names:
+  `human_review_gate`, `faq_candidate_review`, `ai_safe_crm_note`, and
+  `prompt_risk_review`.
+- Response 3 should return a `human_review_gate` content block whose JSON text
+  includes `gateStatus`, `reviewOwner`, `nextAction`, and `boundary`.
+
+If those fields appear in the terminal but not in Claude Desktop, Cursor, or
+another client, the package is likely running and the next thing to check is the
+client config, restart behavior, or command path.
+
 ## Public-Safe Feedback
 
 If the output is unclear, open a Tried It feedback issue and include only:
