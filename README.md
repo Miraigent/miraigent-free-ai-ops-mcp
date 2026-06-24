@@ -120,6 +120,38 @@ you ran, the public-safe input shape, and the returned status field. Do not
 paste private customer records, secrets, internal policy text, or paid product
 files.
 
+## Read The Returned Status
+
+After the smoke test runs, look for the status field from the tool you called
+before changing client configuration or private workflows.
+
+For `human_review_gate`:
+
+- `auto_ok`: the synthetic draft looks low risk, but the tool still does not
+  send anything.
+- `review_required`: keep a human reviewer in the workflow before sending.
+- `stop`: pause the workflow and resolve the sensitive, payment, complaint,
+  privacy, public-facing, or policy issue first.
+
+For `prompt_risk_review`:
+
+- `review_checklist_required`: document the data-handling checklist before
+  running the prompt.
+- `human_review_required`: add a human review step before AI output can affect a
+  customer-facing workflow.
+- `stop_before_ai_use`: do not run the prompt until the data-handling rule is
+  reviewed.
+
+For `faq_candidate_review`, use `recommendedStatus` to decide whether the
+pattern belongs in a public FAQ, internal FAQ, or human-review rule. For
+`ai_safe_crm_note`, check that facts, AI suggestions, human decisions, and next
+actions stay in separate fields.
+
+If the status is surprising, open a Tried It feedback issue with synthetic input
+only. The most useful report says which status you expected, which status you
+received, and what extra rule or explanation would have made the result easier
+to use.
+
 ## Copy A Useful Feedback Result
 
 When you open a Tried It feedback issue, the most useful report is the smallest

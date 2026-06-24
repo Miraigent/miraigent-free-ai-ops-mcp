@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.23] - 2026-06-24
+
+### Changed
+
+- Added README guidance for reading returned MCP status fields so npm and
+  GitHub users can choose the next safe action before changing client config or
+  connecting private workflows.
+
 ## [0.1.22] - 2026-06-22
 
 ### Changed
