@@ -25,10 +25,6 @@ assert.match(helpStdout, /npx -y free-ai-ops-mcp@npm:@miraigent\/free-ai-ops-mcp
 assert.match(helpStdout, /human_review_gate/);
 assert.match(helpStdout, /Do not paste secrets/);
 
-const child = spawn(process.execPath, ['mcp/free-ai-ops-server.mjs'], {
-  stdio: ['pipe', 'pipe', 'inherit']
-});
-
 const requests = [
   { jsonrpc: '2.0', id: 1, method: 'initialize', params: {} },
   { jsonrpc: '2.0', id: 2, method: 'tools/list', params: {} },
@@ -93,25 +89,33 @@ const requests = [
   }
 ];
 
-let stdout = '';
-child.stdout.on('data', (chunk) => {
-  stdout += chunk;
-});
-
-for (const request of requests) {
-  child.stdin.write(JSON.stringify(request) + '\n');
-}
-child.stdin.end();
-
-await new Promise((resolve, reject) => {
-  child.on('error', reject);
-  child.on('close', (code) => {
-    if (code !== 0) reject(new Error('server exited with ' + code));
-    else resolve();
+async function runServerWithRequests(requestLines) {
+  const child = spawn(process.execPath, ['mcp/free-ai-ops-server.mjs'], {
+    stdio: ['pipe', 'pipe', 'inherit']
   });
-});
 
-const responses = stdout.trim().split('\n').map((line) => JSON.parse(line));
+  let stdout = '';
+  child.stdout.on('data', (chunk) => {
+    stdout += chunk;
+  });
+
+  for (const requestLine of requestLines) {
+    child.stdin.write(requestLine + '\n');
+  }
+  child.stdin.end();
+
+  await new Promise((resolve, reject) => {
+    child.on('error', reject);
+    child.on('close', (code) => {
+      if (code !== 0) reject(new Error('server exited with ' + code));
+      else resolve();
+    });
+  });
+
+  return stdout.trim().split('\n').map((line) => JSON.parse(line));
+}
+
+const responses = await runServerWithRequests(requests.map((request) => JSON.stringify(request)));
 assert.equal(responses.length, requests.length);
 assert.equal(responses[0].result.serverInfo.name, 'miraigent-free-ai-ops-mcp');
 assert.equal(responses[0].result.serverInfo.version, packageJson.version);
@@ -121,3 +125,17 @@ assert.match(responses[2].result.content[0].text, /nextLogRow/);
 assert.match(responses[3].result.content[0].text, /public_faq_candidate/);
 assert.match(responses[4].result.content[0].text, /crmNote/);
 assert.match(responses[5].result.content[0].text, /stop_before_ai_use|human_review_required/);
+
+const sampleSession = await readFile(
+  new URL('../examples/mcp-json-rpc-session/sample-session.jsonl', import.meta.url),
+  'utf8'
+);
+const sampleLines = sampleSession.trim().split('\n');
+const sampleResponses = await runServerWithRequests(sampleLines);
+assert.equal(sampleResponses.length, 3);
+assert.equal(sampleResponses[0].result.serverInfo.name, 'miraigent-free-ai-ops-mcp');
+assert.equal(sampleResponses[0].result.serverInfo.version, packageJson.version);
+assert.equal(sampleResponses[1].result.tools.length, 4);
+assert.match(sampleResponses[2].result.content[0].text, /gateStatus/);
+assert.match(sampleResponses[2].result.content[0].text, /reviewOwner/);
+assert.match(sampleResponses[2].result.content[0].text, /boundary/);

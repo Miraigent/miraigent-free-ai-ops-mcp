@@ -3,6 +3,10 @@
 This example gives developers a copy-ready MCP session for the public
 @miraigent/free-ai-ops-mcp package.
 
+The sample JSONL file in this directory is part of the repository smoke test.
+When `npm test` passes, this public copy-paste session has been replayed against
+the local MCP server and checked for the expected response fields.
+
 Use it before wiring the package into Claude Desktop, Cursor, or a custom MCP
 client. It verifies that the server responds to:
 
@@ -39,6 +43,10 @@ client config:
 If those fields appear in the terminal but not in Claude Desktop, Cursor, or
 another client, the package is likely running and the next thing to check is the
 client config, restart behavior, or command path.
+
+Maintainers should update this sample and the smoke test together whenever a
+response field or tool name changes. That keeps the GitHub example, npm package,
+and README troubleshooting path from drifting apart.
 
 ## Public-Safe Feedback
 

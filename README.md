@@ -19,6 +19,9 @@ examples/human-review-gate/.
 For a complete public-safe MCP session that covers initialize, tools/list, and
 one tool call, see examples/mcp-json-rpc-session/.
 
+That JSON-RPC session is also covered by `npm test`, so the README proof path
+and packaged example stay aligned when the MCP response shape changes.
+
 ## One-Command Public Smoke Test
 
 Use this when you want to confirm the npm package works before editing a desktop
@@ -36,6 +39,10 @@ The response should include:
 This is the fastest public proof path for npm and GitHub users. If the command
 starts but the returned status is confusing, open a Tried It feedback issue with
 the command, synthetic input shape, and returned status only.
+
+For maintainers and contributors, `npm test` replays the same public
+`examples/mcp-json-rpc-session/sample-session.jsonl` file and checks the
+returned server name, version, tool count, and review-gate fields.
 
 If you are checking the package from npm search, run the public help first:
 

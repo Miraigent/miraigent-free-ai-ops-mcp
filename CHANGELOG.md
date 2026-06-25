@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.24] - 2026-06-25
+
+### Changed
+
+- Added smoke-test coverage for the public MCP JSON-RPC session example so npm
+  and GitHub users can trust that the copy-ready sample stays aligned with the
+  packaged server response fields.
+
 ## [0.1.23] - 2026-06-24
 
 ### Changed
