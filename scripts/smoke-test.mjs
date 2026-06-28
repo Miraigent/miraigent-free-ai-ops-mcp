@@ -139,3 +139,17 @@ assert.equal(sampleResponses[1].result.tools.length, 4);
 assert.match(sampleResponses[2].result.content[0].text, /gateStatus/);
 assert.match(sampleResponses[2].result.content[0].text, /reviewOwner/);
 assert.match(sampleResponses[2].result.content[0].text, /boundary/);
+
+const promptRiskSession = await readFile(
+  new URL('../examples/prompt-risk-json-rpc-session/sample-session.jsonl', import.meta.url),
+  'utf8'
+);
+const promptRiskResponses = await runServerWithRequests(promptRiskSession.trim().split('\n'));
+assert.equal(promptRiskResponses.length, 3);
+assert.equal(promptRiskResponses[0].result.serverInfo.name, 'miraigent-free-ai-ops-mcp');
+assert.equal(promptRiskResponses[0].result.serverInfo.version, packageJson.version);
+assert.equal(promptRiskResponses[1].result.tools.length, 4);
+assert.match(promptRiskResponses[2].result.content[0].text, /prompt_risk_review/);
+assert.match(promptRiskResponses[2].result.content[0].text, /stop_before_ai_use/);
+assert.match(promptRiskResponses[2].result.content[0].text, /customer_facing/);
+assert.match(promptRiskResponses[2].result.content[0].text, /sensitive_data_possible/);

@@ -19,6 +19,10 @@ examples/human-review-gate/.
 For a complete public-safe MCP session that covers initialize, tools/list, and
 one tool call, see examples/mcp-json-rpc-session/.
 
+If your first concern is whether a customer-facing prompt should be stopped
+before AI use, use examples/prompt-risk-json-rpc-session/ for a copy-ready
+prompt_risk_review session.
+
 That JSON-RPC session is also covered by `npm test`, so the README proof path
 and packaged example stay aligned when the MCP response shape changes.
 
@@ -205,6 +209,8 @@ Copy-ready examples:
 - FAQ candidate review: `npm run example:faq-candidate-review`
 - AI-safe CRM note: `npm run example:ai-safe-crm-note`
 - Prompt risk review: `npm run example:prompt-risk-review`
+- Prompt risk JSON-RPC session:
+  `npm run mcp < examples/prompt-risk-json-rpc-session/sample-session.jsonl`
 
 All examples use synthetic data. Keep private customer records, secrets,
 internal policy text, and paid product files out of public issues and screenshots.

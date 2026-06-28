@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.25] - 2026-06-28
+
+### Added
+
+- Added a copy-ready prompt_risk_review JSON-RPC session example and smoke-test
+  coverage so developers can verify the customer-facing prompt stop path before
+  connecting private support or CRM workflows.
+
 ## [0.1.24] - 2026-06-25
 
 ### Changed
