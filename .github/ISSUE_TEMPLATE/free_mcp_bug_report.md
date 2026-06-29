@@ -10,6 +10,13 @@ assignees: ""
 
 Which MCP tool has the issue?
 
+## Environment
+
+- Package version:
+- How you ran it: npx / Claude Desktop / Cursor / other MCP client
+- Node.js version:
+- Operating system:
+
 ## What happened?
 
 Describe the problem.
@@ -20,7 +27,9 @@ What should happen instead?
 
 ## Public-safe example
 
-Use synthetic data only. Do not include private customer data.
+Use synthetic data only. Include the command or client config shape, the smallest
+public-safe JSON-RPC input that reproduces the issue, and the returned status or
+error field. Do not include private customer data.
 
 ## Boundary check
 

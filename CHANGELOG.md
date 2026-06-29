@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.26] - 2026-06-29
+
+### Changed
+
+- Clarified the bug report template so npm, Claude Desktop, Cursor, and custom
+  MCP users can include version, runtime, command shape, and synthetic JSON-RPC
+  reproduction details without sharing private data.
+
 ## [0.1.25] - 2026-06-28
 
 ### Added
