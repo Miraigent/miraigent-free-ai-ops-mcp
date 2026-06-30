@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.27] - 2026-06-30
+
+### Added
+
+- Added smoke-test coverage for the exact public MCP tool names returned by
+  `tools/list` so README examples and desktop MCP clients stay aligned with the
+  packaged server.
+
 ## [0.1.26] - 2026-06-29
 
 ### Changed

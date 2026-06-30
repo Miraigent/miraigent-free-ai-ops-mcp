@@ -120,6 +120,10 @@ assert.equal(responses.length, requests.length);
 assert.equal(responses[0].result.serverInfo.name, 'miraigent-free-ai-ops-mcp');
 assert.equal(responses[0].result.serverInfo.version, packageJson.version);
 assert.equal(responses[1].result.tools.length, 4);
+assert.deepEqual(
+  responses[1].result.tools.map((tool) => tool.name),
+  ['human_review_gate', 'faq_candidate_review', 'ai_safe_crm_note', 'prompt_risk_review']
+);
 assert.match(responses[2].result.content[0].text, /review_required|stop/);
 assert.match(responses[2].result.content[0].text, /nextLogRow/);
 assert.match(responses[3].result.content[0].text, /public_faq_candidate/);
@@ -136,6 +140,10 @@ assert.equal(sampleResponses.length, 3);
 assert.equal(sampleResponses[0].result.serverInfo.name, 'miraigent-free-ai-ops-mcp');
 assert.equal(sampleResponses[0].result.serverInfo.version, packageJson.version);
 assert.equal(sampleResponses[1].result.tools.length, 4);
+assert.deepEqual(
+  sampleResponses[1].result.tools.map((tool) => tool.name),
+  ['human_review_gate', 'faq_candidate_review', 'ai_safe_crm_note', 'prompt_risk_review']
+);
 assert.match(sampleResponses[2].result.content[0].text, /gateStatus/);
 assert.match(sampleResponses[2].result.content[0].text, /reviewOwner/);
 assert.match(sampleResponses[2].result.content[0].text, /boundary/);
@@ -149,6 +157,10 @@ assert.equal(promptRiskResponses.length, 3);
 assert.equal(promptRiskResponses[0].result.serverInfo.name, 'miraigent-free-ai-ops-mcp');
 assert.equal(promptRiskResponses[0].result.serverInfo.version, packageJson.version);
 assert.equal(promptRiskResponses[1].result.tools.length, 4);
+assert.deepEqual(
+  promptRiskResponses[1].result.tools.map((tool) => tool.name),
+  ['human_review_gate', 'faq_candidate_review', 'ai_safe_crm_note', 'prompt_risk_review']
+);
 assert.match(promptRiskResponses[2].result.content[0].text, /prompt_risk_review/);
 assert.match(promptRiskResponses[2].result.content[0].text, /stop_before_ai_use/);
 assert.match(promptRiskResponses[2].result.content[0].text, /customer_facing/);
