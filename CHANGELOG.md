@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.28] - 2026-07-01
+
+### Fixed
+
+- Read the MCP initialize server version from `package.json` so npm releases,
+  README smoke checks, and desktop MCP clients cannot drift when the package
+  version changes.
+
 ## [0.1.27] - 2026-06-30
 
 ### Added

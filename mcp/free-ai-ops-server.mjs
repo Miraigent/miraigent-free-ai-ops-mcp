@@ -1,6 +1,9 @@
 #!/usr/bin/env node
 
-const serverInfo = { name: 'miraigent-free-ai-ops-mcp', version: '0.1.27' };
+import { readFileSync } from 'node:fs';
+
+const packageJson = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8'));
+const serverInfo = { name: 'miraigent-free-ai-ops-mcp', version: packageJson.version };
 
 const tools = [
   {
