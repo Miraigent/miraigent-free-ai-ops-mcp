@@ -17,7 +17,8 @@ const tools = [
         riskFlags: { type: 'array', items: { type: 'string' } },
         reviewOwner: { type: 'string' },
         sendMode: { type: 'string' }
-      }
+      },
+      required: ['draftType', 'audience', 'riskFlags', 'reviewOwner', 'sendMode']
     }
   },
   {
@@ -31,7 +32,8 @@ const tools = [
         responseCost: { type: 'string' },
         riskLevel: { type: 'string' },
         currentAnswer: { type: 'string' }
-      }
+      },
+      required: ['inquiryPattern', 'frequency', 'responseCost', 'riskLevel']
     }
   },
   {
@@ -45,7 +47,8 @@ const tools = [
         containsPersonalData: { type: 'boolean' },
         nextAction: { type: 'string' },
         owner: { type: 'string' }
-      }
+      },
+      required: ['rawNoteSummary', 'channel', 'containsPersonalData', 'nextAction', 'owner']
     }
   },
   {
@@ -59,7 +62,8 @@ const tools = [
         dataTypes: { type: 'array', items: { type: 'string' } },
         customerFacing: { type: 'boolean' },
         riskLevel: { type: 'string' }
-      }
+      },
+      required: ['operation', 'promptSummary', 'dataTypes', 'customerFacing', 'riskLevel']
     }
   }
 ];

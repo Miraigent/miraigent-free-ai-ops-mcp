@@ -124,6 +124,33 @@ assert.deepEqual(
   responses[1].result.tools.map((tool) => tool.name),
   ['human_review_gate', 'faq_candidate_review', 'ai_safe_crm_note', 'prompt_risk_review']
 );
+assert.deepEqual(responses[1].result.tools[0].inputSchema.required, [
+  'draftType',
+  'audience',
+  'riskFlags',
+  'reviewOwner',
+  'sendMode'
+]);
+assert.deepEqual(responses[1].result.tools[1].inputSchema.required, [
+  'inquiryPattern',
+  'frequency',
+  'responseCost',
+  'riskLevel'
+]);
+assert.deepEqual(responses[1].result.tools[2].inputSchema.required, [
+  'rawNoteSummary',
+  'channel',
+  'containsPersonalData',
+  'nextAction',
+  'owner'
+]);
+assert.deepEqual(responses[1].result.tools[3].inputSchema.required, [
+  'operation',
+  'promptSummary',
+  'dataTypes',
+  'customerFacing',
+  'riskLevel'
+]);
 assert.match(responses[2].result.content[0].text, /review_required|stop/);
 assert.match(responses[2].result.content[0].text, /nextLogRow/);
 assert.match(responses[3].result.content[0].text, /public_faq_candidate/);

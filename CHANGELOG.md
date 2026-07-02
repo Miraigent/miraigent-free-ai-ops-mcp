@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.29] - 2026-07-02
+
+### Changed
+
+- Declared required MCP input fields for all four public tools so Claude
+  Desktop, Cursor, and custom MCP clients can render clearer tool forms from
+  `tools/list` before users connect private workflows.
+
 ## [0.1.28] - 2026-07-01
 
 ### Fixed
