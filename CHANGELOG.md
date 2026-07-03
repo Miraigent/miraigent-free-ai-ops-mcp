@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.30] - 2026-07-03
+
+### Fixed
+
+- Corrected the MCP JSON-RPC session README to name the actual
+  `human_review_gate` response field `nextLogRow`, so npm and GitHub users can
+  compare the public smoke-test output without looking for an old field name.
+
 ## [0.1.29] - 2026-07-02
 
 ### Changed

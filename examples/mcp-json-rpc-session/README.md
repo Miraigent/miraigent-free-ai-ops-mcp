@@ -38,7 +38,7 @@ client config:
   `human_review_gate`, `faq_candidate_review`, `ai_safe_crm_note`, and
   `prompt_risk_review`.
 - Response 3 should return a `human_review_gate` content block whose JSON text
-  includes `gateStatus`, `reviewOwner`, `nextAction`, and `boundary`.
+  includes `gateStatus`, `reviewOwner`, `nextLogRow`, and `boundary`.
 
 If those fields appear in the terminal but not in Claude Desktop, Cursor, or
 another client, the package is likely running and the next thing to check is the
