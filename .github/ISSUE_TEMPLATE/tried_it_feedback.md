@@ -15,6 +15,10 @@ Which command, example, or MCP tool did you run?
 Describe the result. If possible, include the public-safe input shape and the
 returned status or output field that was unclear.
 
+If this happened in Claude Desktop, Cursor, or another MCP client, include only
+the client name, operating system, command/args shape, and the public-safe
+status or error field. Do not paste full client logs.
+
 ## What were you trying to decide?
 
 For example:
