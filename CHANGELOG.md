@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.31] - 2026-07-06
+
+### Changed
+
+- Clarified that MCP JSON-RPC tool results are wrapped in `content[0].text`, so
+  npm and GitHub users know where to parse the public smoke-test status before
+  connecting a real workflow or changing desktop client config.
+
 ## [0.1.30] - 2026-07-03
 
 ### Fixed

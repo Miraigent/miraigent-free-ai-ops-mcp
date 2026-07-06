@@ -40,6 +40,10 @@ client config:
 - Response 3 should return a `human_review_gate` content block whose JSON text
   includes `gateStatus`, `reviewOwner`, `nextLogRow`, and `boundary`.
 
+In raw JSON-RPC output, the tool result is wrapped by MCP as `content[0].text`.
+Parse that text value as JSON, then check `gateStatus` before connecting a real
+workflow or changing a desktop client config.
+
 If those fields appear in the terminal but not in Claude Desktop, Cursor, or
 another client, the package is likely running and the next thing to check is the
 client config, restart behavior, or command path.
