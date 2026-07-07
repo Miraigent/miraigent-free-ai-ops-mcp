@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.32] - 2026-07-07
+
+### Added
+
+- Added smoke-test assertions that parse MCP tool results from
+  `content[0].text` as JSON and verify exact public fields for the human review
+  and prompt risk JSON-RPC sessions.
+
 ## [0.1.31] - 2026-07-06
 
 ### Changed

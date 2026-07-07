@@ -174,6 +174,11 @@ assert.deepEqual(
 assert.match(sampleResponses[2].result.content[0].text, /gateStatus/);
 assert.match(sampleResponses[2].result.content[0].text, /reviewOwner/);
 assert.match(sampleResponses[2].result.content[0].text, /boundary/);
+const sampleToolResult = JSON.parse(sampleResponses[2].result.content[0].text);
+assert.equal(sampleToolResult.tool, 'human_review_gate');
+assert.equal(sampleToolResult.gateStatus, 'stop');
+assert.equal(sampleToolResult.nextLogRow.gate_status, 'stop');
+assert.equal(sampleToolResult.boundary, 'This tool is a review helper. It does not send messages.');
 
 const promptRiskSession = await readFile(
   new URL('../examples/prompt-risk-json-rpc-session/sample-session.jsonl', import.meta.url),
@@ -192,3 +197,11 @@ assert.match(promptRiskResponses[2].result.content[0].text, /prompt_risk_review/
 assert.match(promptRiskResponses[2].result.content[0].text, /stop_before_ai_use/);
 assert.match(promptRiskResponses[2].result.content[0].text, /customer_facing/);
 assert.match(promptRiskResponses[2].result.content[0].text, /sensitive_data_possible/);
+const promptRiskToolResult = JSON.parse(promptRiskResponses[2].result.content[0].text);
+assert.equal(promptRiskToolResult.tool, 'prompt_risk_review');
+assert.equal(promptRiskToolResult.recommendation, 'stop_before_ai_use');
+assert.deepEqual(promptRiskToolResult.riskFlags, ['customer_facing', 'sensitive_data_possible']);
+assert.equal(
+  promptRiskToolResult.boundary,
+  'This tool is a prompt risk helper. It is not legal advice and does not call an AI API.'
+);
