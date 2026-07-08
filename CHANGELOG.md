@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.33] - 2026-07-08
+
+### Changed
+
+- Added a minimal README parsing example that shows MCP users how to read the
+  JSON tool result from `content[0].text` before wiring the package into a
+  desktop client or private workflow.
+
 ## [0.1.32] - 2026-07-07
 
 ### Added

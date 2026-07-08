@@ -136,6 +136,26 @@ files.
 After the smoke test runs, look for the status field from the tool you called
 before changing client configuration or private workflows.
 
+In raw JSON-RPC output, MCP wraps each tool result inside `content[0].text`.
+Parse that text value as JSON before you check the returned decision:
+
+    const response = JSON.parse(lineFromStdout);
+    const toolResult = JSON.parse(response.result.content[0].text);
+    console.log(toolResult.gateStatus);
+
+For the bundled smoke-test session, that prints `stop`. Use the parsed
+`gateStatus`, `recommendation`, or `recommendedStatus` field from the relevant
+tool before changing a desktop MCP client config or connecting private data.
+
+If you only need a terminal check, you can copy the final JSON-RPC line from the
+smoke-test output and inspect the wrapped text field with Node:
+
+    node -e 'const r=JSON.parse(process.argv[1]); console.log(JSON.parse(r.result.content[0].text));' '<paste one response line here>'
+
+Paste only the synthetic response from the public example. Do not paste private
+customer records or desktop client logs into shell history, screenshots, or
+GitHub issues.
+
 For `human_review_gate`:
 
 - `auto_ok`: the synthetic draft looks low risk, but the tool still does not
