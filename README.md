@@ -55,6 +55,14 @@ If you are checking the package from npm search, run the public help first:
 The help output lists the available MCP tools, the one-command smoke test, and
 the public-safe boundary before you send any JSON-RPC input.
 
+If a local npx cache or desktop MCP client appears stale, compare it with the
+public registry version before changing private client configuration:
+
+    npm view @miraigent/free-ai-ops-mcp version
+
+The version printed by `npm view` should match the version shown in the package
+help output and in the MCP `initialize` response.
+
 If the result is unclear, open a Tried It feedback issue with synthetic input
 only. A useful issue can be as small as:
 

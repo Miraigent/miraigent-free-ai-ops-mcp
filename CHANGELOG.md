@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.34] - 2026-07-09
+
+### Changed
+
+- Added a README version-check command so npm and GitHub users can confirm the
+  public registry version before debugging local npx or desktop MCP client
+  cache behavior.
+
 ## [0.1.33] - 2026-07-08
 
 ### Changed
