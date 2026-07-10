@@ -63,6 +63,18 @@ public registry version before changing private client configuration:
 The version printed by `npm view` should match the version shown in the package
 help output and in the MCP `initialize` response.
 
+Quick version mismatch check:
+
+1. Run `npm view @miraigent/free-ai-ops-mcp version`.
+2. Run `npx -y free-ai-ops-mcp@npm:@miraigent/free-ai-ops-mcp --help` and
+   confirm the header shows the same version.
+3. Run the one-command smoke test and confirm the `initialize` response includes
+   the same `serverInfo.version`.
+
+If only the desktop MCP client shows an older version after those checks pass,
+restart the client and re-check its `command` and `args` path before changing
+any private workflow data.
+
 If the result is unclear, open a Tried It feedback issue with synthetic input
 only. A useful issue can be as small as:
 

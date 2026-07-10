@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.35] - 2026-07-10
+
+### Changed
+
+- Added a README version mismatch checklist so npm and GitHub users can compare
+  the registry version, npx help output, and MCP initialize response before
+  changing desktop client configuration.
+
 ## [0.1.34] - 2026-07-09
 
 ### Changed
