@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.36] - 2026-07-11
+
+### Added
+
+- Added smoke-test coverage that verifies unknown MCP tool calls return a
+  JSON-RPC error with the request ID instead of being treated as a successful
+  tool result.
+
 ## [0.1.35] - 2026-07-10
 
 ### Changed

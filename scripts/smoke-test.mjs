@@ -205,3 +205,16 @@ assert.equal(
   promptRiskToolResult.boundary,
   'This tool is a prompt risk helper. It is not legal advice and does not call an AI API.'
 );
+
+const unknownToolResponses = await runServerWithRequests([
+  JSON.stringify({
+    jsonrpc: '2.0',
+    id: 7,
+    method: 'tools/call',
+    params: { name: 'unknown_public_tool', arguments: {} }
+  })
+]);
+assert.equal(unknownToolResponses.length, 1);
+assert.equal(unknownToolResponses[0].id, 7);
+assert.equal(unknownToolResponses[0].error.code, -32000);
+assert.equal(unknownToolResponses[0].error.message, 'Unknown tool: unknown_public_tool');
