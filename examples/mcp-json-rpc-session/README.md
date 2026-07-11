@@ -44,6 +44,15 @@ In raw JSON-RPC output, the tool result is wrapped by MCP as `content[0].text`.
 Parse that text value as JSON, then check `gateStatus` before connecting a real
 workflow or changing a desktop client config.
 
+For a terminal-only check, you can read just the final response line from the
+public sample and print the parsed tool result:
+
+    npm run mcp < examples/mcp-json-rpc-session/sample-session.jsonl | tail -n 1 | node -e 'process.stdin.on("data", c => { const r = JSON.parse(c); console.log(JSON.parse(r.result.content[0].text)); })'
+
+That should print a public synthetic `human_review_gate` result with
+`gateStatus: "stop"`. Use only the bundled sample input for this quick check,
+not private customer records or desktop client logs.
+
 If those fields appear in the terminal but not in Claude Desktop, Cursor, or
 another client, the package is likely running and the next thing to check is the
 client config, restart behavior, or command path.
