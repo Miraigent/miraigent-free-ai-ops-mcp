@@ -218,3 +218,16 @@ assert.equal(unknownToolResponses.length, 1);
 assert.equal(unknownToolResponses[0].id, 7);
 assert.equal(unknownToolResponses[0].error.code, -32000);
 assert.equal(unknownToolResponses[0].error.message, 'Unknown tool: unknown_public_tool');
+
+const unsupportedMethodResponses = await runServerWithRequests([
+  JSON.stringify({
+    jsonrpc: '2.0',
+    id: 8,
+    method: 'resources/list',
+    params: {}
+  })
+]);
+assert.equal(unsupportedMethodResponses.length, 1);
+assert.equal(unsupportedMethodResponses[0].id, 8);
+assert.equal(unsupportedMethodResponses[0].error.code, -32000);
+assert.equal(unsupportedMethodResponses[0].error.message, 'Unsupported method: resources/list');

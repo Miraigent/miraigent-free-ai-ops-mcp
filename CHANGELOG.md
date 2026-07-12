@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.37] - 2026-07-12
+
+### Added
+
+- Added smoke-test coverage that verifies unsupported JSON-RPC methods return a
+  request-scoped error instead of a successful result.
+
 ## [0.1.36] - 2026-07-11
 
 ### Added
