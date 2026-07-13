@@ -13,7 +13,10 @@ Which MCP tool has the issue?
 ## Environment
 
 - Package version:
+- Registry version from `npm view @miraigent/free-ai-ops-mcp version`:
+- Version shown by `npx -y free-ai-ops-mcp@npm:@miraigent/free-ai-ops-mcp --help`:
 - How you ran it: npx / Claude Desktop / Cursor / other MCP client
+- Command or MCP client args shape:
 - Node.js version:
 - Operating system:
 
