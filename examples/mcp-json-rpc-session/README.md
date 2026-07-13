@@ -20,6 +20,10 @@ From the repository root:
 
     npm run mcp < examples/mcp-json-rpc-session/sample-session.jsonl
 
+From the public npm package:
+
+    npx -y free-ai-ops-mcp@npm:@miraigent/free-ai-ops-mcp < examples/mcp-json-rpc-session/sample-session.jsonl
+
 You should receive three JSON-RPC response lines. The final response should
 include a human_review_gate result with:
 
