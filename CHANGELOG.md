@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.38] - 2026-07-14
+
+### Changed
+
+- Added a README tool-call preview so MCP client users can compare the expected
+  `human_review_gate` input shape before pasting synthetic data into a desktop
+  client or public issue.
+
 ## [0.1.37] - 2026-07-12
 
 ### Added

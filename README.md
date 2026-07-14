@@ -106,6 +106,22 @@ After restarting Claude Desktop or Cursor, the four tools
 (`human_review_gate`, `faq_candidate_review`, `ai_safe_crm_note`,
 `prompt_risk_review`) will be available in the MCP tools panel.
 
+Before connecting a real workflow, try one synthetic `human_review_gate` call in
+your MCP client and compare the input shape with this public example:
+
+    {
+      "draftType": "support reply",
+      "audience": "customer",
+      "riskFlags": ["refund", "personal data"],
+      "reviewOwner": "support lead",
+      "sendMode": "manual"
+    }
+
+For that kind of input, the expected result is `stop` or `review_required`, plus
+a boundary note saying the tool does not send messages. If your client shows a
+different field name or hides the returned status, open a Tried It feedback
+issue with synthetic input only.
+
 Claude Desktop config location:
 
 - macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
