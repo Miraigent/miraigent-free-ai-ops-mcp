@@ -24,6 +24,8 @@ await new Promise((resolve, reject) => {
 assert.match(helpStdout, /npx -y free-ai-ops-mcp@npm:@miraigent\/free-ai-ops-mcp/);
 assert.match(helpStdout, /human_review_gate/);
 assert.match(helpStdout, /Do not paste secrets/);
+assert.match(helpStdout, /private memory behavior/);
+assert.match(helpStdout, /github\.com\/Miraigent\/miraigent-free-ai-ops-mcp\/issues\/new\/choose/);
 
 const requests = [
   { jsonrpc: '2.0', id: 1, method: 'initialize', params: {} },

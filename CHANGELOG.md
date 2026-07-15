@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.39] - 2026-07-15
+
+### Added
+
+- Added smoke-test coverage for the public `--help` feedback route and
+  private-memory boundary so npm users keep seeing the safe GitHub issue path
+  before sharing MCP troubleshooting details.
+
 ## [0.1.38] - 2026-07-14
 
 ### Changed
