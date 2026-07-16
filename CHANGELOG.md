@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.40] - 2026-07-16
+
+### Changed
+
+- Added a public npm command to the prompt-risk JSON-RPC session example so
+  users can test the stop-before-AI-use path before cloning the repository or
+  connecting private workflow data.
+
 ## [0.1.39] - 2026-07-15
 
 ### Added

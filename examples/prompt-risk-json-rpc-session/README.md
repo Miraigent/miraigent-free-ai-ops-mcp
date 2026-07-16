@@ -13,6 +13,10 @@ From the repository root:
 
     npm run mcp < examples/prompt-risk-json-rpc-session/sample-session.jsonl
 
+From the public npm package:
+
+    npx -y free-ai-ops-mcp@npm:@miraigent/free-ai-ops-mcp < examples/prompt-risk-json-rpc-session/sample-session.jsonl
+
 You should receive three JSON-RPC response lines. The final response should
 include a `prompt_risk_review` result with:
 
