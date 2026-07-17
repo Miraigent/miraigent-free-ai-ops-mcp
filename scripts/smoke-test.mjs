@@ -119,6 +119,8 @@ async function runServerWithRequests(requestLines) {
 
 const responses = await runServerWithRequests(requests.map((request) => JSON.stringify(request)));
 assert.equal(responses.length, requests.length);
+assert.equal(responses[0].result.protocolVersion, '2024-11-05');
+assert.deepEqual(responses[0].result.capabilities, { tools: {} });
 assert.equal(responses[0].result.serverInfo.name, 'miraigent-free-ai-ops-mcp');
 assert.equal(responses[0].result.serverInfo.version, packageJson.version);
 assert.equal(responses[1].result.tools.length, 4);
@@ -166,6 +168,8 @@ const sampleSession = await readFile(
 const sampleLines = sampleSession.trim().split('\n');
 const sampleResponses = await runServerWithRequests(sampleLines);
 assert.equal(sampleResponses.length, 3);
+assert.equal(sampleResponses[0].result.protocolVersion, '2024-11-05');
+assert.deepEqual(sampleResponses[0].result.capabilities, { tools: {} });
 assert.equal(sampleResponses[0].result.serverInfo.name, 'miraigent-free-ai-ops-mcp');
 assert.equal(sampleResponses[0].result.serverInfo.version, packageJson.version);
 assert.equal(sampleResponses[1].result.tools.length, 4);
@@ -188,6 +192,8 @@ const promptRiskSession = await readFile(
 );
 const promptRiskResponses = await runServerWithRequests(promptRiskSession.trim().split('\n'));
 assert.equal(promptRiskResponses.length, 3);
+assert.equal(promptRiskResponses[0].result.protocolVersion, '2024-11-05');
+assert.deepEqual(promptRiskResponses[0].result.capabilities, { tools: {} });
 assert.equal(promptRiskResponses[0].result.serverInfo.name, 'miraigent-free-ai-ops-mcp');
 assert.equal(promptRiskResponses[0].result.serverInfo.version, packageJson.version);
 assert.equal(promptRiskResponses[1].result.tools.length, 4);

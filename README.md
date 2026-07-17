@@ -75,6 +75,15 @@ If only the desktop MCP client shows an older version after those checks pass,
 restart the client and re-check its `command` and `args` path before changing
 any private workflow data.
 
+Quick initialize response check:
+
+    npx -y free-ai-ops-mcp@npm:@miraigent/free-ai-ops-mcp < examples/mcp-json-rpc-session/sample-session.jsonl | head -n 1
+
+That first response should include `protocolVersion: "2024-11-05"`,
+`capabilities.tools`, and `serverInfo.version`. If those fields appear in the
+terminal but not in a desktop MCP client, debug the client restart/config path
+before changing private workflow data.
+
 If the result is unclear, open a Tried It feedback issue with synthetic input
 only. A useful issue can be as small as:
 
@@ -349,6 +358,10 @@ The session sends three JSON-RPC messages:
 - initialize: confirms protocolVersion, capabilities, and serverInfo.
 - tools/list: confirms the four public alpha tools are visible.
 - tools/call: runs human_review_gate with synthetic support-reply data.
+
+The first response should include `protocolVersion: "2024-11-05"`,
+`capabilities.tools`, and a `serverInfo.version` value that matches
+`package.json` and the public npm registry version.
 
 If you open a GitHub issue, copy only synthetic input shapes and returned status
 fields. Do not paste private customer records, secrets, tokens, internal policy

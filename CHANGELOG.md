@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.41] - 2026-07-17
+
+### Changed
+
+- Added an initialize response check to the public smoke-test path so MCP users
+  can confirm the protocol version, capabilities, and package version before
+  debugging desktop client configuration.
+
 ## [0.1.40] - 2026-07-16
 
 ### Changed
