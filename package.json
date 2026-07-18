@@ -1,6 +1,6 @@
 {
   "name": "@miraigent/free-ai-ops-mcp",
-  "version": "0.1.41",
+  "version": "0.1.42",
   "description": "Free MCP server for developers adding human review gates, prompt risk checks, FAQ review, and CRM note safety to AI tools.",
   "homepage": "https://github.com/Miraigent/miraigent-free-ai-ops-mcp",
   "type": "module",

@@ -53,7 +53,10 @@ If you are checking the package from npm search, run the public help first:
     npx -y free-ai-ops-mcp@npm:@miraigent/free-ai-ops-mcp --help
 
 The help output lists the available MCP tools, the one-command smoke test, and
-the public-safe boundary before you send any JSON-RPC input.
+the public-safe boundary before you send any JSON-RPC input. The first line
+also prints `Miraigent Free AI Ops MCP <version>`, which is the quickest way to
+confirm whether `npx` is using the current public package or a stale local
+cache.
 
 If a local npx cache or desktop MCP client appears stale, compare it with the
 public registry version before changing private client configuration:

@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.42] - 2026-07-18
+
+### Changed
+
+- Clarified that the public help header prints the package version and added
+  smoke-test coverage for that header so npm users can spot stale `npx` cache
+  behavior before editing MCP client configuration.
+
 ## [0.1.41] - 2026-07-17
 
 ### Changed

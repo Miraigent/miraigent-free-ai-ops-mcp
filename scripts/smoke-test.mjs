@@ -22,6 +22,7 @@ await new Promise((resolve, reject) => {
 });
 
 assert.match(helpStdout, /npx -y free-ai-ops-mcp@npm:@miraigent\/free-ai-ops-mcp/);
+assert.match(helpStdout, new RegExp(`Miraigent Free AI Ops MCP ${packageJson.version.replaceAll('.', '\\.')}`));
 assert.match(helpStdout, /human_review_gate/);
 assert.match(helpStdout, /Do not paste secrets/);
 assert.match(helpStdout, /private memory behavior/);
