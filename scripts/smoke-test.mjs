@@ -3,6 +3,7 @@ import assert from 'node:assert';
 import { readFile } from 'node:fs/promises';
 
 const packageJson = JSON.parse(await readFile(new URL('../package.json', import.meta.url), 'utf8'));
+const rootReadme = await readFile(new URL('../README.md', import.meta.url), 'utf8');
 
 const helpChild = spawn(process.execPath, ['mcp/free-ai-ops-server.mjs', '--help'], {
   stdio: ['ignore', 'pipe', 'inherit']
@@ -27,6 +28,8 @@ assert.match(helpStdout, /human_review_gate/);
 assert.match(helpStdout, /Do not paste secrets/);
 assert.match(helpStdout, /private memory behavior/);
 assert.match(helpStdout, /github\.com\/Miraigent\/miraigent-free-ai-ops-mcp\/issues\/new\/choose/);
+assert.match(rootReadme, /tail -n 1 \| node -e/);
+assert.match(rootReadme, /console\.log\(JSON\.parse\(r\.result\.content\[0\]\.text\)\.gateStatus\)/);
 
 const requests = [
   { jsonrpc: '2.0', id: 1, method: 'initialize', params: {} },

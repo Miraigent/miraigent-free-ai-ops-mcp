@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.43] - 2026-07-19
+
+### Changed
+
+- Added a README command that extracts and parses the bundled JSON-RPC smoke-test
+  result without copy-pasting response lines, plus smoke-test coverage so the
+  public proof path stays visible for npm users.
+
 ## [0.1.42] - 2026-07-18
 
 ### Changed
