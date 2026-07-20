@@ -190,6 +190,21 @@ assert.equal(sampleToolResult.gateStatus, 'stop');
 assert.equal(sampleToolResult.nextLogRow.gate_status, 'stop');
 assert.equal(sampleToolResult.boundary, 'This tool is a review helper. It does not send messages.');
 
+const toolsListSession = await readFile(
+  new URL('../examples/tools-list-json-rpc-session/sample-session.jsonl', import.meta.url),
+  'utf8'
+);
+const toolsListResponses = await runServerWithRequests(toolsListSession.trim().split('\n'));
+assert.equal(toolsListResponses.length, 2);
+assert.equal(toolsListResponses[0].result.protocolVersion, '2024-11-05');
+assert.equal(toolsListResponses[0].result.serverInfo.name, 'miraigent-free-ai-ops-mcp');
+assert.equal(toolsListResponses[0].result.serverInfo.version, packageJson.version);
+assert.deepEqual(
+  toolsListResponses[1].result.tools.map((tool) => tool.name),
+  ['human_review_gate', 'faq_candidate_review', 'ai_safe_crm_note', 'prompt_risk_review']
+);
+assert.match(rootReadme, /examples\/tools-list-json-rpc-session\/sample-session\.jsonl/);
+
 const promptRiskSession = await readFile(
   new URL('../examples/prompt-risk-json-rpc-session/sample-session.jsonl', import.meta.url),
   'utf8'

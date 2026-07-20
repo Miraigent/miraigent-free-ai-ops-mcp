@@ -19,6 +19,9 @@ examples/human-review-gate/.
 For a complete public-safe MCP session that covers initialize, tools/list, and
 one tool call, see examples/mcp-json-rpc-session/.
 
+If you only want to confirm which tools the server exposes before sending any
+sample tool-call input, use examples/tools-list-json-rpc-session/.
+
 If your first concern is whether a customer-facing prompt should be stopped
 before AI use, use examples/prompt-risk-json-rpc-session/ for a copy-ready
 prompt_risk_review session.
@@ -43,6 +46,13 @@ The response should include:
 This is the fastest public proof path for npm and GitHub users. If the command
 starts but the returned status is confusing, open a Tried It feedback issue with
 the command, synthetic input shape, and returned status only.
+
+To inspect the public tool list without running any tool call:
+
+    npx -y free-ai-ops-mcp@npm:@miraigent/free-ai-ops-mcp < examples/tools-list-json-rpc-session/sample-session.jsonl
+
+That response should include `human_review_gate`, `faq_candidate_review`,
+`ai_safe_crm_note`, and `prompt_risk_review`.
 
 For maintainers and contributors, `npm test` replays the same public
 `examples/mcp-json-rpc-session/sample-session.jsonl` file and checks the

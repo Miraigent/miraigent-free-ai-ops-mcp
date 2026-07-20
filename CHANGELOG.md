@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.44] - 2026-07-20
+
+### Added
+
+- Added a tools-list-only JSON-RPC session example and smoke-test coverage so
+  MCP client users can confirm the four public tools before sending any sample
+  tool-call input.
+
 ## [0.1.43] - 2026-07-19
 
 ### Changed
