@@ -17,7 +17,8 @@ returned status or output field that was unclear.
 
 If this happened in Claude Desktop, Cursor, or another MCP client, include only
 the client name, operating system, command/args shape, and the public-safe
-status or error field. Do not paste full client logs.
+status or error field. Do not paste full client logs, internal policy text, paid
+product files, or private workflow data.
 
 ## What were you trying to decide?
 
@@ -38,5 +39,6 @@ example, another risk flag, a different output field, or a new workflow.
 - [ ] No secrets, tokens, passwords, cookies, or credentials.
 - [ ] No private customer information.
 - [ ] No private company notes.
+- [ ] No internal policy text, paid product files, or full private client logs.
 - [ ] No MIRAI Memory engine details.
 - [ ] No working memory MCP request.

@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.45] - 2026-07-21
+
+### Changed
+
+- Clarified the public GitHub issue templates so MCP users report command
+  shapes and synthetic results without sharing paid product files, internal
+  policy text, or private workflow logs.
+
 ## [0.1.44] - 2026-07-20
 
 ### Added

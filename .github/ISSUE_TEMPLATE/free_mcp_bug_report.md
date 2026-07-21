@@ -32,11 +32,13 @@ What should happen instead?
 
 Use synthetic data only. Include the command or client config shape, the smallest
 public-safe JSON-RPC input that reproduces the issue, and the returned status or
-error field. Do not include private customer data.
+error field. Do not paste full desktop client logs, internal policy text, paid
+product files, or private workflow data.
 
 ## Boundary check
 
 - [ ] No secrets, tokens, passwords, cookies, or credentials.
 - [ ] No private customer information.
+- [ ] No internal policy text, paid product files, or full private client logs.
 - [ ] No MIRAI Memory engine details.
 - [ ] No working memory MCP request.
