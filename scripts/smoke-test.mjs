@@ -30,6 +30,11 @@ assert.match(helpStdout, /private memory behavior/);
 assert.match(helpStdout, /github\.com\/Miraigent\/miraigent-free-ai-ops-mcp\/issues\/new\/choose/);
 assert.match(rootReadme, /tail -n 1 \| node -e/);
 assert.match(rootReadme, /console\.log\(JSON\.parse\(r\.result\.content\[0\]\.text\)\.gateStatus\)/);
+assert.match(rootReadme, /Quick field map:/);
+assert.match(rootReadme, /`human_review_gate`: read `gateStatus`/);
+assert.match(rootReadme, /`faq_candidate_review`: read `recommendedStatus`/);
+assert.match(rootReadme, /`ai_safe_crm_note`: read `crmNote\.nextAction` and the `maskingChecklist`/);
+assert.match(rootReadme, /`prompt_risk_review`: read `recommendation` and `riskFlags`/);
 
 const requests = [
   { jsonrpc: '2.0', id: 1, method: 'initialize', params: {} },

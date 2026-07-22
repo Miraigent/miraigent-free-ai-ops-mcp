@@ -194,6 +194,17 @@ files.
 After the smoke test runs, look for the status field from the tool you called
 before changing client configuration or private workflows.
 
+Quick field map:
+
+- `human_review_gate`: read `gateStatus`.
+- `faq_candidate_review`: read `recommendedStatus`.
+- `ai_safe_crm_note`: read `crmNote.nextAction` and the `maskingChecklist`.
+- `prompt_risk_review`: read `recommendation` and `riskFlags`.
+
+Those fields are returned inside MCP `content[0].text`, so parse that wrapped
+text as JSON before deciding whether the next action is proceed, review, or
+stop.
+
 In raw JSON-RPC output, MCP wraps each tool result inside `content[0].text`.
 Parse that text value as JSON before you check the returned decision:
 

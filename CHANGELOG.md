@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.46] - 2026-07-22
+
+### Changed
+
+- Added a README field map for each public MCP tool so users know which returned
+  status field to inspect before changing MCP client configuration or sharing a
+  public-safe issue.
+
 ## [0.1.45] - 2026-07-21
 
 ### Changed
