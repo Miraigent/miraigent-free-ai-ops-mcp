@@ -4,6 +4,10 @@ import { readFile } from 'node:fs/promises';
 
 const packageJson = JSON.parse(await readFile(new URL('../package.json', import.meta.url), 'utf8'));
 const rootReadme = await readFile(new URL('../README.md', import.meta.url), 'utf8');
+const candidateRequestTemplate = await readFile(
+  new URL('../.github/ISSUE_TEMPLATE/free_mcp_candidate_request.md', import.meta.url),
+  'utf8'
+);
 
 const helpChild = spawn(process.execPath, ['mcp/free-ai-ops-server.mjs', '--help'], {
   stdio: ['ignore', 'pipe', 'inherit']
@@ -35,6 +39,10 @@ assert.match(rootReadme, /`human_review_gate`: read `gateStatus`/);
 assert.match(rootReadme, /`faq_candidate_review`: read `recommendedStatus`/);
 assert.match(rootReadme, /`ai_safe_crm_note`: read `crmNote\.nextAction` and the `maskingChecklist`/);
 assert.match(rootReadme, /`prompt_risk_review`: read `recommendation` and `riskFlags`/);
+assert.match(candidateRequestTemplate, /This can be demonstrated with synthetic input and output only/);
+assert.match(candidateRequestTemplate, /decision field you expect users to read first/);
+assert.match(candidateRequestTemplate, /does not send messages or store customer data/);
+assert.match(candidateRequestTemplate, /paid product files, secrets, cookies, tokens, or private keys/);
 
 const requests = [
   { jsonrpc: '2.0', id: 1, method: 'initialize', params: {} },

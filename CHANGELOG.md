@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.47] - 2026-07-23
+
+### Changed
+
+- Clarified the free MCP candidate request template with public-safe input and
+  output examples, expected decision-field guidance, and smoke-test coverage so
+  new workflow requests stay useful without exposing private data or paid files.
+
 ## [0.1.46] - 2026-07-22
 
 ### Changed
