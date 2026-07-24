@@ -54,6 +54,15 @@ To inspect the public tool list without running any tool call:
 That response should include `human_review_gate`, `faq_candidate_review`,
 `ai_safe_crm_note`, and `prompt_risk_review`.
 
+If that tools-list check passes, the next safest tool-call check is the bundled
+`human_review_gate` session:
+
+    npx -y free-ai-ops-mcp@npm:@miraigent/free-ai-ops-mcp < examples/mcp-json-rpc-session/sample-session.jsonl
+
+That sample uses only synthetic refund, complaint, and personal-data flags, and
+should return `gateStatus: "stop"`. Use this step to confirm tool-call output
+before pasting any real workflow data into an MCP client.
+
 For maintainers and contributors, `npm test` replays the same public
 `examples/mcp-json-rpc-session/sample-session.jsonl` file and checks the
 returned server name, version, tool count, and review-gate fields.

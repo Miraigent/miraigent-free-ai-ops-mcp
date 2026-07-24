@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.48] - 2026-07-24
+
+### Changed
+
+- Clarified the README path from a tools-list-only check to the safest bundled
+  `human_review_gate` tool-call smoke test, with smoke-test coverage so public
+  users know the next step before using real workflow data.
+
 ## [0.1.47] - 2026-07-23
 
 ### Changed

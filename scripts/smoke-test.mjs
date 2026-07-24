@@ -39,6 +39,8 @@ assert.match(rootReadme, /`human_review_gate`: read `gateStatus`/);
 assert.match(rootReadme, /`faq_candidate_review`: read `recommendedStatus`/);
 assert.match(rootReadme, /`ai_safe_crm_note`: read `crmNote\.nextAction` and the `maskingChecklist`/);
 assert.match(rootReadme, /`prompt_risk_review`: read `recommendation` and `riskFlags`/);
+assert.match(rootReadme, /If that tools-list check passes, the next safest tool-call check/);
+assert.match(rootReadme, /should return `gateStatus: "stop"`/);
 assert.match(candidateRequestTemplate, /This can be demonstrated with synthetic input and output only/);
 assert.match(candidateRequestTemplate, /decision field you expect users to read first/);
 assert.match(candidateRequestTemplate, /does not send messages or store customer data/);
