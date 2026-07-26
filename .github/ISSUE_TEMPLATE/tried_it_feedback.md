@@ -20,6 +20,14 @@ the client name, operating system, command/args shape, and the public-safe
 status or error field. Do not paste full client logs, internal policy text, paid
 product files, or private workflow data.
 
+Useful minimal examples:
+
+- npx command: `npx -y free-ai-ops-mcp@npm:@miraigent/free-ai-ops-mcp --help`
+- desktop MCP args shape: `["-y", "free-ai-ops-mcp@npm:@miraigent/free-ai-ops-mcp"]`
+- returned field: `gateStatus`, `recommendedStatus`, `recommendation`, or `nextAction`
+- synthetic input shape: risk flags, workflow type, review owner, and send mode
+  only
+
 ## What were you trying to decide?
 
 For example:

@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.49] - 2026-07-26
+
+### Changed
+
+- Clarified the Tried It feedback template with minimal public-safe examples for
+  npx, desktop MCP clients, and returned decision fields, with smoke-test
+  coverage so public issue reports stay useful without private logs or data.
+
 ## [0.1.48] - 2026-07-24
 
 ### Changed
