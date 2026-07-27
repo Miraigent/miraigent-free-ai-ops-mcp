@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.50] - 2026-07-27
+
+### Changed
+
+- Included the public bug report and Tried It feedback templates in the npm
+  package files list, with smoke-test coverage so packed releases keep the same
+  public-safe issue guidance as the GitHub repository.
+
 ## [0.1.49] - 2026-07-26
 
 ### Changed

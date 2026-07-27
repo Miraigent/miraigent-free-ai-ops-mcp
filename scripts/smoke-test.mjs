@@ -54,6 +54,9 @@ assert.match(triedItFeedbackTemplate, /free-ai-ops-mcp@npm:@miraigent\/free-ai-o
 assert.match(triedItFeedbackTemplate, /desktop MCP args shape/);
 assert.match(triedItFeedbackTemplate, /`gateStatus`, `recommendedStatus`, `recommendation`, or `nextAction`/);
 assert.match(triedItFeedbackTemplate, /synthetic input shape/);
+assert(packageJson.files.includes('.github/ISSUE_TEMPLATE/free_mcp_candidate_request.md'));
+assert(packageJson.files.includes('.github/ISSUE_TEMPLATE/free_mcp_bug_report.md'));
+assert(packageJson.files.includes('.github/ISSUE_TEMPLATE/tried_it_feedback.md'));
 
 const requests = [
   { jsonrpc: '2.0', id: 1, method: 'initialize', params: {} },
