@@ -8,6 +8,10 @@ const candidateRequestTemplate = await readFile(
   new URL('../.github/ISSUE_TEMPLATE/free_mcp_candidate_request.md', import.meta.url),
   'utf8'
 );
+const bugReportTemplate = await readFile(
+  new URL('../.github/ISSUE_TEMPLATE/free_mcp_bug_report.md', import.meta.url),
+  'utf8'
+);
 const triedItFeedbackTemplate = await readFile(
   new URL('../.github/ISSUE_TEMPLATE/tried_it_feedback.md', import.meta.url),
   'utf8'
@@ -49,6 +53,11 @@ assert.match(candidateRequestTemplate, /This can be demonstrated with synthetic 
 assert.match(candidateRequestTemplate, /decision field you expect users to read first/);
 assert.match(candidateRequestTemplate, /does not send messages or store customer data/);
 assert.match(candidateRequestTemplate, /paid product files, secrets, cookies, tokens, or private keys/);
+assert.match(bugReportTemplate, /MCP method or step: initialize \/ tools\/list \/ tools\/call \/ --help/);
+assert.match(
+  bugReportTemplate,
+  /First decision field you checked: gateStatus \/ recommendedStatus \/ recommendation \/ nextAction \/ error\.message/
+);
 assert.match(triedItFeedbackTemplate, /Useful minimal examples:/);
 assert.match(triedItFeedbackTemplate, /free-ai-ops-mcp@npm:@miraigent\/free-ai-ops-mcp/);
 assert.match(triedItFeedbackTemplate, /desktop MCP args shape/);

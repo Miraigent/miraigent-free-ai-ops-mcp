@@ -17,6 +17,8 @@ Which MCP tool has the issue?
 - Version shown by `npx -y free-ai-ops-mcp@npm:@miraigent/free-ai-ops-mcp --help`:
 - How you ran it: npx / Claude Desktop / Cursor / other MCP client
 - Command or MCP client args shape:
+- MCP method or step: initialize / tools/list / tools/call / --help
+- First decision field you checked: gateStatus / recommendedStatus / recommendation / nextAction / error.message
 - Node.js version:
 - Operating system:
 

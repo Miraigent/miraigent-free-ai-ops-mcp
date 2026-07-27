@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.51] - 2026-07-27
+
+### Changed
+
+- Clarified the public bug report template with the MCP method/step and first
+  decision field to check, with smoke-test coverage so reports can identify the
+  failing JSON-RPC stage without private logs.
+
 ## [0.1.50] - 2026-07-27
 
 ### Changed
