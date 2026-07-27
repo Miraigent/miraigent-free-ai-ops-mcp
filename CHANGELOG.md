@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.52] - 2026-07-27
+
+### Changed
+
+- Clarified the public bug report template with the JSON-RPC request id or
+  response line number to identify failing `.jsonl` examples without private
+  MCP client logs, with smoke-test coverage to keep that report field packaged.
+
 ## [0.1.51] - 2026-07-27
 
 ### Changed

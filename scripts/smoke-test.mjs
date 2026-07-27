@@ -54,6 +54,7 @@ assert.match(candidateRequestTemplate, /decision field you expect users to read 
 assert.match(candidateRequestTemplate, /does not send messages or store customer data/);
 assert.match(candidateRequestTemplate, /paid product files, secrets, cookies, tokens, or private keys/);
 assert.match(bugReportTemplate, /MCP method or step: initialize \/ tools\/list \/ tools\/call \/ --help/);
+assert.match(bugReportTemplate, /JSON-RPC request id or response line number/);
 assert.match(
   bugReportTemplate,
   /First decision field you checked: gateStatus \/ recommendedStatus \/ recommendation \/ nextAction \/ error\.message/
