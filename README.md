@@ -260,6 +260,11 @@ For `prompt_risk_review`:
 - `stop_before_ai_use`: do not run the prompt until the data-handling rule is
   reviewed.
 
+For public `prompt_risk_review` feedback, share only the operation label,
+sanitized data-type labels, the returned `recommendation`, and the returned
+`riskFlags`. Do not paste the original prompt, customer text, internal policy,
+or private workflow logs.
+
 For `faq_candidate_review`, use `recommendedStatus` to decide whether the
 pattern belongs in a public FAQ, internal FAQ, or human-review rule. For
 `ai_safe_crm_note`, check that facts, AI suggestions, human decisions, and next

@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.53] - 2026-07-28
+
+### Changed
+
+- Clarified the public-safe `prompt_risk_review` feedback shape so users can
+  report recommendation and risk flags without sharing the original prompt or
+  customer data, with smoke-test coverage to keep that guidance packaged.
+
 ## [0.1.52] - 2026-07-27
 
 ### Changed
