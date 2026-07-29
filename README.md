@@ -265,6 +265,11 @@ sanitized data-type labels, the returned `recommendation`, and the returned
 `riskFlags`. Do not paste the original prompt, customer text, internal policy,
 or private workflow logs.
 
+For public `ai_safe_crm_note` feedback, share only a masked note label, channel,
+whether personal data was present, the returned `crmNote.nextAction`, and the
+returned `maskingChecklist` result. Do not paste the raw CRM note, customer
+message, contact details, internal policy, or private workflow logs.
+
 For `faq_candidate_review`, use `recommendedStatus` to decide whether the
 pattern belongs in a public FAQ, internal FAQ, or human-review rule. For
 `ai_safe_crm_note`, check that facts, AI suggestions, human decisions, and next

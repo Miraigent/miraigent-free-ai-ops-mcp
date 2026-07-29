@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.1.54] - 2026-07-29
+
+### Changed
+
+- Clarified the public-safe `ai_safe_crm_note` feedback shape so users can
+  report separated CRM-note fields and masking results without sharing raw CRM
+  notes, customer text, or private workflow data, with smoke-test coverage to
+  keep that guidance packaged.
+
 ## [0.1.53] - 2026-07-28
 
 ### Changed

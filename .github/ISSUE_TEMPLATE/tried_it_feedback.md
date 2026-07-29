@@ -27,6 +27,8 @@ Useful minimal examples:
 - returned field: `gateStatus`, `recommendedStatus`, `recommendation`, or `nextAction`
 - synthetic input shape: risk flags, workflow type, review owner, and send mode
   only
+- CRM note feedback shape: masked note label, channel, personal-data yes/no,
+  returned `crmNote.nextAction`, and returned `maskingChecklist` result only
 
 ## What were you trying to decide?
 
