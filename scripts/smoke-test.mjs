@@ -55,6 +55,7 @@ assert.match(rootReadme, /For public `ai_safe_crm_note` feedback/);
 assert.match(rootReadme, /masked note label/);
 assert.match(rootReadme, /returned `crmNote\.nextAction`/);
 assert.match(rootReadme, /Do not paste the raw CRM note/);
+assert.match(rootReadme, /examples\/ai-safe-crm-note-json-rpc-session\/sample-session\.jsonl/);
 assert.match(rootReadme, /If that tools-list check passes, the next safest tool-call check/);
 assert.match(rootReadme, /should return `gateStatus: "stop"`/);
 assert.match(candidateRequestTemplate, /This can be demonstrated with synthetic input and output only/);
@@ -279,6 +280,39 @@ assert.deepEqual(promptRiskToolResult.riskFlags, ['customer_facing', 'sensitive_
 assert.equal(
   promptRiskToolResult.boundary,
   'This tool is a prompt risk helper. It is not legal advice and does not call an AI API.'
+);
+
+const crmNoteSession = await readFile(
+  new URL('../examples/ai-safe-crm-note-json-rpc-session/sample-session.jsonl', import.meta.url),
+  'utf8'
+);
+const crmNoteResponses = await runServerWithRequests(crmNoteSession.trim().split('\n'));
+assert.equal(crmNoteResponses.length, 3);
+assert.equal(crmNoteResponses[0].result.protocolVersion, '2024-11-05');
+assert.deepEqual(crmNoteResponses[0].result.capabilities, { tools: {} });
+assert.equal(crmNoteResponses[0].result.serverInfo.name, 'miraigent-free-ai-ops-mcp');
+assert.equal(crmNoteResponses[0].result.serverInfo.version, packageJson.version);
+assert.equal(crmNoteResponses[1].result.tools.length, 4);
+assert.deepEqual(
+  crmNoteResponses[1].result.tools.map((tool) => tool.name),
+  ['human_review_gate', 'faq_candidate_review', 'ai_safe_crm_note', 'prompt_risk_review']
+);
+assert.match(crmNoteResponses[2].result.content[0].text, /ai_safe_crm_note/);
+assert.match(crmNoteResponses[2].result.content[0].text, /crmNote/);
+assert.match(crmNoteResponses[2].result.content[0].text, /customerFacts/);
+assert.match(crmNoteResponses[2].result.content[0].text, /nextAction/);
+assert.match(crmNoteResponses[2].result.content[0].text, /maskingChecklist/);
+const crmNoteToolResult = JSON.parse(crmNoteResponses[2].result.content[0].text);
+assert.equal(crmNoteToolResult.tool, 'ai_safe_crm_note');
+assert.equal(crmNoteToolResult.crmNote.channel, 'contact form');
+assert.equal(crmNoteToolResult.crmNote.nextAction, 'send setup checklist and confirm kickoff date');
+assert.deepEqual(crmNoteToolResult.maskingChecklist, [
+  'Confirm no personal data is included.',
+  'Keep synthetic examples in public issues.'
+]);
+assert.equal(
+  crmNoteToolResult.boundary,
+  'This tool structures notes. It is not an anonymizer and does not store data.'
 );
 
 const unknownToolResponses = await runServerWithRequests([

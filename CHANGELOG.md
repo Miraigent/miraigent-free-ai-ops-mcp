@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.55] - 2026-07-30
+
+### Added
+
+- Added a copy-ready public JSON-RPC session for `ai_safe_crm_note`, plus README
+  routing and smoke-test coverage so npm users can test CRM note field
+  separation without cloning the repository or sharing raw CRM notes.
+
 ## [0.1.54] - 2026-07-29
 
 ### Changed

@@ -26,6 +26,11 @@ If your first concern is whether a customer-facing prompt should be stopped
 before AI use, use examples/prompt-risk-json-rpc-session/ for a copy-ready
 prompt_risk_review session.
 
+If your first concern is separating customer facts, AI suggestions, human
+decisions, and next actions before a note goes into a CRM, use
+examples/ai-safe-crm-note-json-rpc-session/ for a copy-ready ai_safe_crm_note
+session.
+
 That JSON-RPC session is also covered by `npm test`, so the README proof path
 and packaged example stay aligned when the MCP response shape changes.
 
@@ -325,6 +330,8 @@ Copy-ready examples:
 - Human review gate: `npm run example:human-review-gate`
 - FAQ candidate review: `npm run example:faq-candidate-review`
 - AI-safe CRM note: `npm run example:ai-safe-crm-note`
+- AI-safe CRM note JSON-RPC session:
+  `npm run mcp < examples/ai-safe-crm-note-json-rpc-session/sample-session.jsonl`
 - Prompt risk review: `npm run example:prompt-risk-review`
 - Prompt risk JSON-RPC session:
   `npm run mcp < examples/prompt-risk-json-rpc-session/sample-session.jsonl`
@@ -485,6 +492,10 @@ Run the FAQ candidate review example:
 Run the AI-safe CRM note example:
 
     npm run example:ai-safe-crm-note
+
+Run the AI-safe CRM note JSON-RPC session:
+
+    npm run mcp < examples/ai-safe-crm-note-json-rpc-session/sample-session.jsonl
 
 ## npm Package
 
