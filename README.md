@@ -275,6 +275,16 @@ whether personal data was present, the returned `crmNote.nextAction`, and the
 returned `maskingChecklist` result. Do not paste the raw CRM note, customer
 message, contact details, internal policy, or private workflow logs.
 
+To verify the CRM note result without copying the wrapped JSON-RPC response,
+run the bundled public sample and print only the returned next action:
+
+    npx -y free-ai-ops-mcp@npm:@miraigent/free-ai-ops-mcp < examples/ai-safe-crm-note-json-rpc-session/sample-session.jsonl | tail -n 1 | node -e 'process.stdin.on("data", c => { const r = JSON.parse(c); console.log(JSON.parse(r.result.content[0].text).crmNote.nextAction); })'
+
+That prints `send setup checklist and confirm kickoff date` for the synthetic
+contact-form example. If your CRM workflow needs a different next action, share
+only the masked note label, channel, personal-data yes/no value, and returned
+next action in a public issue.
+
 For `faq_candidate_review`, use `recommendedStatus` to decide whether the
 pattern belongs in a public FAQ, internal FAQ, or human-review rule. For
 `ai_safe_crm_note`, check that facts, AI suggestions, human decisions, and next

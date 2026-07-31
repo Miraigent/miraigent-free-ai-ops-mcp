@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.56] - 2026-07-31
+
+### Changed
+
+- Added a copy-safe README command for extracting only the
+  `ai_safe_crm_note` next action from the bundled JSON-RPC session, with
+  smoke-test coverage so CRM note troubleshooting can stay public-safe.
+
 ## [0.1.55] - 2026-07-30
 
 ### Added

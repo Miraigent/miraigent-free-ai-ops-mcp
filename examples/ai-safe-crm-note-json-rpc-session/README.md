@@ -27,6 +27,14 @@ include an `ai_safe_crm_note` result with:
 - crmNote.nextAction
 - maskingChecklist
 
+To inspect only the public-safe next action from the final response:
+
+    npx -y free-ai-ops-mcp@npm:@miraigent/free-ai-ops-mcp < examples/ai-safe-crm-note-json-rpc-session/sample-session.jsonl | tail -n 1 | node -e 'process.stdin.on("data", c => { const r = JSON.parse(c); console.log(JSON.parse(r.result.content[0].text).crmNote.nextAction); })'
+
+That prints:
+
+    send setup checklist and confirm kickoff date
+
 ## Public-Safe Feedback
 
 If the output is unclear, open a Tried It feedback issue and include only:
