@@ -235,14 +235,22 @@ smoke-test output and inspect the wrapped text field with Node:
 
     node -e 'const r=JSON.parse(process.argv[1]); console.log(JSON.parse(r.result.content[0].text));' '<paste one response line here>'
 
-To avoid copying any response text at all, run the bundled public sample and
-parse only its final synthetic tool-call response:
+To avoid copying any response text at all from a repository checkout, run the
+bundled public sample and parse only its final synthetic tool-call response:
 
     npx -y free-ai-ops-mcp@npm:@miraigent/free-ai-ops-mcp < examples/mcp-json-rpc-session/sample-session.jsonl | tail -n 1 | node -e 'process.stdin.on("data", c => { const r = JSON.parse(c); console.log(JSON.parse(r.result.content[0].text).gateStatus); })'
 
 That prints `stop` for the bundled support-reply example. If it does, the
 package is returning the expected MCP result shape and you can debug client
 configuration separately from tool behavior.
+
+If you have not cloned the repository, fetch the public npm tarball and stream
+the packaged example directly into the same `npx` command:
+
+    pkg=$(npm pack --silent @miraigent/free-ai-ops-mcp@latest) && tar -xOf "$pkg" package/examples/mcp-json-rpc-session/sample-session.jsonl | npx -y free-ai-ops-mcp@npm:@miraigent/free-ai-ops-mcp
+
+That command uses only the public package contents and the synthetic bundled
+sample. Delete the downloaded `*.tgz` file after the check if you do not need it.
 
 Paste only the synthetic response from the public example. Do not paste private
 customer records or desktop client logs into shell history, screenshots, or

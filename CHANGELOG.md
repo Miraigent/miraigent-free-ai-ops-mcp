@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.57] - 2026-08-01
+
+### Changed
+
+- Clarified how npm users can stream the bundled public JSON-RPC example from
+  the package tarball without cloning the repository, with smoke-test coverage
+  so the README path stays packaged and public-safe.
+
 ## [0.1.56] - 2026-07-31
 
 ### Changed

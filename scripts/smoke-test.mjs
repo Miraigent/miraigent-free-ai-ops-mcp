@@ -42,6 +42,12 @@ assert.match(helpStdout, /private memory behavior/);
 assert.match(helpStdout, /github\.com\/Miraigent\/miraigent-free-ai-ops-mcp\/issues\/new\/choose/);
 assert.match(rootReadme, /tail -n 1 \| node -e/);
 assert.match(rootReadme, /console\.log\(JSON\.parse\(r\.result\.content\[0\]\.text\)\.gateStatus\)/);
+assert.match(rootReadme, /pkg=\$\(npm pack --silent @miraigent\/free-ai-ops-mcp@latest\)/);
+assert.match(
+  rootReadme,
+  /tar -xOf "\$pkg" package\/examples\/mcp-json-rpc-session\/sample-session\.jsonl \| npx -y free-ai-ops-mcp@npm:@miraigent\/free-ai-ops-mcp/
+);
+assert.match(rootReadme, /uses only the public package contents and the synthetic bundled\s+sample/);
 assert.match(rootReadme, /Quick field map:/);
 assert.match(rootReadme, /`human_review_gate`: read `gateStatus`/);
 assert.match(rootReadme, /`faq_candidate_review`: read `recommendedStatus`/);
