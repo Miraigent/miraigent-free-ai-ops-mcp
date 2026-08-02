@@ -252,6 +252,14 @@ the packaged example directly into the same `npx` command:
 That command uses only the public package contents and the synthetic bundled
 sample. Delete the downloaded `*.tgz` file after the check if you do not need it.
 
+To keep the npm tarball check from leaving a downloaded package in your current
+directory, run it inside a temporary directory with a cleanup trap:
+
+    workdir=$(mktemp -d) && trap 'rm -rf "$workdir"' EXIT && cd "$workdir" && pkg=$(npm pack --silent @miraigent/free-ai-ops-mcp@latest) && tar -xOf "$pkg" package/examples/mcp-json-rpc-session/sample-session.jsonl | npx -y free-ai-ops-mcp@npm:@miraigent/free-ai-ops-mcp
+
+That variant leaves your repository checkout unchanged while still testing the
+same packaged synthetic JSON-RPC session from npm.
+
 Paste only the synthetic response from the public example. Do not paste private
 customer records or desktop client logs into shell history, screenshots, or
 GitHub issues.

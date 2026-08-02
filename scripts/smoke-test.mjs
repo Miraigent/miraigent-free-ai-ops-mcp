@@ -48,6 +48,9 @@ assert.match(
   /tar -xOf "\$pkg" package\/examples\/mcp-json-rpc-session\/sample-session\.jsonl \| npx -y free-ai-ops-mcp@npm:@miraigent\/free-ai-ops-mcp/
 );
 assert.match(rootReadme, /uses only the public package contents and the synthetic bundled\s+sample/);
+assert.match(rootReadme, /workdir=\$\(mktemp -d\)/);
+assert.match(rootReadme, /trap 'rm -rf "\$workdir"' EXIT/);
+assert.match(rootReadme, /leaves your repository checkout unchanged/);
 assert.match(rootReadme, /Quick field map:/);
 assert.match(rootReadme, /`human_review_gate`: read `gateStatus`/);
 assert.match(rootReadme, /`faq_candidate_review`: read `recommendedStatus`/);

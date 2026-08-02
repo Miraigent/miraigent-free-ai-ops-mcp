@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.1.58] - 2026-08-02
+
+### Changed
+
+- Added a no-leftover npm tarball smoke-test variant that runs from a temporary
+  directory and removes the downloaded package after streaming the bundled
+  public JSON-RPC example, with smoke-test coverage to keep the public cleanup
+  path visible.
+
 ## [0.1.57] - 2026-08-01
 
 ### Changed
