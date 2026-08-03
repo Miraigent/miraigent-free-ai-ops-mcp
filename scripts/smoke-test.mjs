@@ -80,6 +80,9 @@ assert.match(
   bugReportTemplate,
   /First decision field you checked: gateStatus \/ recommendedStatus \/ recommendation \/ nextAction \/ error\.message/
 );
+assert.match(bugReportTemplate, /If the issue is a wrong review decision/);
+assert.match(bugReportTemplate, /expected public decision\s+field/);
+assert.match(bugReportTemplate, /not your private workflow rules/);
 assert.match(triedItFeedbackTemplate, /Useful minimal examples:/);
 assert.match(triedItFeedbackTemplate, /free-ai-ops-mcp@npm:@miraigent\/free-ai-ops-mcp/);
 assert.match(triedItFeedbackTemplate, /desktop MCP args shape/);

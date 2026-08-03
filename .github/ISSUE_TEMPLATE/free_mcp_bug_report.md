@@ -38,6 +38,11 @@ public-safe JSON-RPC input that reproduces the issue, and the returned status or
 error field. Do not paste full desktop client logs, internal policy text, paid
 product files, or private workflow data.
 
+If the issue is a wrong review decision, include the expected public decision
+field and one sentence explaining why that synthetic example should proceed,
+require review, or stop. Keep the explanation about the sample behavior only,
+not your private workflow rules.
+
 ## Boundary check
 
 - [ ] No secrets, tokens, passwords, cookies, or credentials.

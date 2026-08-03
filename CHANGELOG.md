@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.1.59] - 2026-08-03
+
+### Changed
+
+- Clarified the public bug report template for wrong review-decision reports so
+  users include the expected decision field and a synthetic behavior reason
+  without sharing private workflow rules, with smoke-test coverage to keep that
+  guidance packaged.
+
 ## [0.1.58] - 2026-08-02
 
 ### Changed
