@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.1.60] - 2026-08-04
+
+### Changed
+
+- Clarified the npm tarball smoke-test success criteria so users know to check
+  the initialize response and final `gateStatus: "stop"` result from the
+  packaged synthetic JSON-RPC session, with smoke-test coverage to keep that
+  guidance visible.
+
 ## [0.1.59] - 2026-08-03
 
 ### Changed

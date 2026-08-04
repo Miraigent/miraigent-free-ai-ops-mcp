@@ -260,6 +260,13 @@ directory, run it inside a temporary directory with a cleanup trap:
 That variant leaves your repository checkout unchanged while still testing the
 same packaged synthetic JSON-RPC session from npm.
 
+For the tarball smoke test, the first response should include
+`serverInfo.name: "miraigent-free-ai-ops-mcp"` and the current public package
+version. The final response should wrap a `human_review_gate` result whose
+parsed `gateStatus` is `"stop"` for the bundled synthetic support-reply sample.
+If the tarball command runs but those fields differ, report the package version,
+command shape, and returned public status fields only.
+
 Paste only the synthetic response from the public example. Do not paste private
 customer records or desktop client logs into shell history, screenshots, or
 GitHub issues.

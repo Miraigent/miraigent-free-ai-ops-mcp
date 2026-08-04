@@ -51,6 +51,11 @@ assert.match(rootReadme, /uses only the public package contents and the syntheti
 assert.match(rootReadme, /workdir=\$\(mktemp -d\)/);
 assert.match(rootReadme, /trap 'rm -rf "\$workdir"' EXIT/);
 assert.match(rootReadme, /leaves your repository checkout unchanged/);
+assert.match(rootReadme, /For the tarball smoke test/);
+assert.match(rootReadme, /serverInfo\.name: "miraigent-free-ai-ops-mcp"/);
+assert.match(rootReadme, /current public package\s+version/);
+assert.match(rootReadme, /parsed `gateStatus` is `"stop"`/);
+assert.match(rootReadme, /returned public status fields only/);
 assert.match(rootReadme, /Quick field map:/);
 assert.match(rootReadme, /`human_review_gate`: read `gateStatus`/);
 assert.match(rootReadme, /`faq_candidate_review`: read `recommendedStatus`/);
