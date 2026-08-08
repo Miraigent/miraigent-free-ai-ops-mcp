@@ -180,6 +180,12 @@ Cursor, or another MCP client, check the connection in this order:
   feedback issue with the client name, operating system, command shape, and the
   returned public-safe status fields.
 
+If a tool call returns `Unknown tool: <name>`, treat it as a tool-name mismatch
+first. Re-run the tools-list check, compare the requested name with the four
+public tool names, and report only the command shape, requested synthetic tool
+name, request id, and returned `error.message`. Do not paste private client logs
+or workflow data to explain the mismatch.
+
 Do not paste real customer records, secrets, internal policy text, paid product
 files, or private memory behavior into client logs or GitHub issues.
 

@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.61] - 2026-08-08
+
+### Changed
+
+- Clarified how public MCP users should handle `Unknown tool` JSON-RPC errors:
+  re-run `tools/list`, compare the requested tool name with the four public
+  tool names, and report only the command shape plus public error field.
+
 ## [0.1.60] - 2026-08-04
 
 ### Changed
