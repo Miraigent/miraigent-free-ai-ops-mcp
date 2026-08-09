@@ -59,6 +59,14 @@ To inspect the public tool list without running any tool call:
 That response should include `human_review_gate`, `faq_candidate_review`,
 `ai_safe_crm_note`, and `prompt_risk_review`.
 
+To print only the public tool names from that `tools/list` response without
+copying a full MCP client log, parse the final JSON-RPC line with Node:
+
+    npx -y free-ai-ops-mcp@npm:@miraigent/free-ai-ops-mcp < examples/tools-list-json-rpc-session/sample-session.jsonl | tail -n 1 | node -e 'process.stdin.on("data", c => { const r = JSON.parse(c); console.log(r.result.tools.map(t => t.name).join("\n")); })'
+
+That prints four lines: `human_review_gate`, `faq_candidate_review`,
+`ai_safe_crm_note`, and `prompt_risk_review`.
+
 If that tools-list check passes, the next safest tool-call check is the bundled
 `human_review_gate` session:
 

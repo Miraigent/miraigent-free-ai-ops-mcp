@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.62] - 2026-08-09
+
+### Changed
+
+- Added a copy-safe README command for printing only the public MCP tool names
+  from `tools/list`, with smoke-test coverage so npm users can confirm the
+  exposed tool set without pasting full client logs.
+
 ## [0.1.61] - 2026-08-08
 
 ### Changed
