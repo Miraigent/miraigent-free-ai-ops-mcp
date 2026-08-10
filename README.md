@@ -67,6 +67,15 @@ copying a full MCP client log, parse the final JSON-RPC line with Node:
 That prints four lines: `human_review_gate`, `faq_candidate_review`,
 `ai_safe_crm_note`, and `prompt_risk_review`.
 
+If you have not cloned the repository and only want the packaged public tool
+names, run the same check from a temporary directory and stream the tools-list
+sample out of the npm tarball:
+
+    workdir=$(mktemp -d) && trap 'rm -rf "$workdir"' EXIT && cd "$workdir" && pkg=$(npm pack --silent @miraigent/free-ai-ops-mcp@latest) && tar -xOf "$pkg" package/examples/tools-list-json-rpc-session/sample-session.jsonl | npx -y free-ai-ops-mcp@npm:@miraigent/free-ai-ops-mcp | tail -n 1 | node -e 'process.stdin.on("data", c => { const r = JSON.parse(c); console.log(r.result.tools.map(t => t.name).join("\n")); })'
+
+That clone-free tools-list check prints only the four public tool names and
+removes the downloaded tarball with the temporary directory cleanup trap.
+
 If that tools-list check passes, the next safest tool-call check is the bundled
 `human_review_gate` session:
 

@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.63] - 2026-08-10
+
+### Changed
+
+- Added a clone-free npm tarball command for printing only the packaged
+  `tools/list` tool names, with smoke-test coverage so npm users can confirm the
+  public tool set without leaving downloaded tarballs in a checkout.
+
 ## [0.1.62] - 2026-08-09
 
 ### Changed

@@ -77,6 +77,8 @@ assert.match(rootReadme, /If that tools-list check passes, the next safest tool-
 assert.match(rootReadme, /To print only the public tool names from that `tools\/list` response/);
 assert.match(rootReadme, /r\.result\.tools\.map\(t => t\.name\)\.join\("\\n"\)/);
 assert.match(rootReadme, /That prints four lines: `human_review_gate`, `faq_candidate_review`,\s+`ai_safe_crm_note`, and `prompt_risk_review`/);
+assert.match(rootReadme, /package\/examples\/tools-list-json-rpc-session\/sample-session\.jsonl/);
+assert.match(rootReadme, /That clone-free tools-list check prints only the four public tool names/);
 assert.match(rootReadme, /should return `gateStatus: "stop"`/);
 assert.match(rootReadme, /Unknown tool: <name>/);
 assert.match(rootReadme, /tool-name mismatch/);
