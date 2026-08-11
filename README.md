@@ -26,6 +26,11 @@ If your first concern is whether a customer-facing prompt should be stopped
 before AI use, use examples/prompt-risk-json-rpc-session/ for a copy-ready
 prompt_risk_review session.
 
+If your first concern is whether a repeated support question belongs in a public
+FAQ, internal FAQ, or human-review rule, use
+examples/faq-candidate-review-json-rpc-session/ for a copy-ready
+faq_candidate_review session.
+
 If your first concern is separating customer facts, AI suggestions, human
 decisions, and next actions before a note goes into a CRM, use
 examples/ai-safe-crm-note-json-rpc-session/ for a copy-ready ai_safe_crm_note
@@ -84,6 +89,16 @@ If that tools-list check passes, the next safest tool-call check is the bundled
 That sample uses only synthetic refund, complaint, and personal-data flags, and
 should return `gateStatus: "stop"`. Use this step to confirm tool-call output
 before pasting any real workflow data into an MCP client.
+
+To confirm the FAQ review output shape before you create a public issue or FAQ
+draft, run the bundled `faq_candidate_review` session:
+
+    npx -y free-ai-ops-mcp@npm:@miraigent/free-ai-ops-mcp < examples/faq-candidate-review-json-rpc-session/sample-session.jsonl
+
+The final response should include `recommendedStatus: "public_faq_candidate"`
+for the synthetic pricing-plan question. Report only the repeated question
+pattern, risk level, and returned `recommendedStatus`; do not paste support
+inbox exports or private policy text.
 
 For maintainers and contributors, `npm test` replays the same public
 `examples/mcp-json-rpc-session/sample-session.jsonl` file and checks the

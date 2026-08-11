@@ -80,6 +80,9 @@ assert.match(rootReadme, /That prints four lines: `human_review_gate`, `faq_cand
 assert.match(rootReadme, /package\/examples\/tools-list-json-rpc-session\/sample-session\.jsonl/);
 assert.match(rootReadme, /That clone-free tools-list check prints only the four public tool names/);
 assert.match(rootReadme, /should return `gateStatus: "stop"`/);
+assert.match(rootReadme, /examples\/faq-candidate-review-json-rpc-session\/sample-session\.jsonl/);
+assert.match(rootReadme, /recommendedStatus: "public_faq_candidate"/);
+assert.match(rootReadme, /support\s+inbox exports or private policy text/);
 assert.match(rootReadme, /Unknown tool: <name>/);
 assert.match(rootReadme, /tool-name mismatch/);
 assert.match(rootReadme, /requested synthetic tool\s+name, request id, and returned `error\.message`/);
@@ -308,6 +311,33 @@ assert.deepEqual(promptRiskToolResult.riskFlags, ['customer_facing', 'sensitive_
 assert.equal(
   promptRiskToolResult.boundary,
   'This tool is a prompt risk helper. It is not legal advice and does not call an AI API.'
+);
+
+const faqCandidateSession = await readFile(
+  new URL('../examples/faq-candidate-review-json-rpc-session/sample-session.jsonl', import.meta.url),
+  'utf8'
+);
+const faqCandidateResponses = await runServerWithRequests(faqCandidateSession.trim().split('\n'));
+assert.equal(faqCandidateResponses.length, 3);
+assert.equal(faqCandidateResponses[0].result.protocolVersion, '2024-11-05');
+assert.deepEqual(faqCandidateResponses[0].result.capabilities, { tools: {} });
+assert.equal(faqCandidateResponses[0].result.serverInfo.name, 'miraigent-free-ai-ops-mcp');
+assert.equal(faqCandidateResponses[0].result.serverInfo.version, packageJson.version);
+assert.equal(faqCandidateResponses[1].result.tools.length, 4);
+assert.deepEqual(
+  faqCandidateResponses[1].result.tools.map((tool) => tool.name),
+  ['human_review_gate', 'faq_candidate_review', 'ai_safe_crm_note', 'prompt_risk_review']
+);
+assert.match(faqCandidateResponses[2].result.content[0].text, /faq_candidate_review/);
+assert.match(faqCandidateResponses[2].result.content[0].text, /public_faq_candidate/);
+assert.match(faqCandidateResponses[2].result.content[0].text, /reviewSignals/);
+const faqCandidateToolResult = JSON.parse(faqCandidateResponses[2].result.content[0].text);
+assert.equal(faqCandidateToolResult.tool, 'faq_candidate_review');
+assert.equal(faqCandidateToolResult.recommendedStatus, 'public_faq_candidate');
+assert.equal(faqCandidateToolResult.reviewSignals.riskLevel, 'low');
+assert.equal(
+  faqCandidateToolResult.boundary,
+  'Separate public FAQ, internal FAQ, and human-review rules before automation.'
 );
 
 const crmNoteSession = await readFile(

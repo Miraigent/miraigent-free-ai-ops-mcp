@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.64] - 2026-08-11
+
+### Added
+
+- Added a copy-ready public JSON-RPC session for `faq_candidate_review`, plus
+  README routing and smoke-test coverage so npm users can confirm the FAQ
+  recommendation field without sharing support inbox exports.
+
 ## [0.1.63] - 2026-08-10
 
 ### Changed
