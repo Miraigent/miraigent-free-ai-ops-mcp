@@ -331,6 +331,17 @@ sanitized data-type labels, the returned `recommendation`, and the returned
 `riskFlags`. Do not paste the original prompt, customer text, internal policy,
 or private workflow logs.
 
+To verify the prompt-risk result without copying the wrapped JSON-RPC response,
+run the bundled public sample and print only the returned recommendation and
+risk flags:
+
+    npx -y free-ai-ops-mcp@npm:@miraigent/free-ai-ops-mcp < examples/prompt-risk-json-rpc-session/sample-session.jsonl | tail -n 1 | node -e 'process.stdin.on("data", c => { const r = JSON.parse(c); const result = JSON.parse(r.result.content[0].text); console.log(result.recommendation + " " + result.riskFlags.join(",")); })'
+
+That prints `stop_before_ai_use customer_facing,sensitive_data_possible` for
+the synthetic support-prompt example. If your prompt needs a different result,
+share only the operation label, sanitized data-type labels, recommendation, and
+risk flags in a public issue.
+
 For public `ai_safe_crm_note` feedback, share only a masked note label, channel,
 whether personal data was present, the returned `crmNote.nextAction`, and the
 returned `maskingChecklist` result. Do not paste the raw CRM note, customer

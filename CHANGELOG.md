@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.1.65] - 2026-08-12
+
+### Changed
+
+- Added a copy-safe README command for extracting only the
+  `prompt_risk_review` recommendation and risk flags from the bundled JSON-RPC
+  session, with smoke-test coverage so prompt-risk troubleshooting can stay
+  public-safe.
+
 ## [0.1.64] - 2026-08-11
 
 ### Added
