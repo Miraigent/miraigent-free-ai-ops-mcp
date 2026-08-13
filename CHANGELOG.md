@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.66] - 2026-08-13
+
+### Changed
+
+- Clarified the Tried It feedback template for `tools/list` problems so users
+  can report the client name, command shape, visible tool count, tool names, and
+  public error field without pasting private MCP client logs.
+
 ## [0.1.65] - 2026-08-12
 
 ### Changed

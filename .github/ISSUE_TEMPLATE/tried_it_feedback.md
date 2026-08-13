@@ -25,6 +25,8 @@ Useful minimal examples:
 - npx command: `npx -y free-ai-ops-mcp@npm:@miraigent/free-ai-ops-mcp --help`
 - desktop MCP args shape: `["-y", "free-ai-ops-mcp@npm:@miraigent/free-ai-ops-mcp"]`
 - returned field: `gateStatus`, `recommendedStatus`, `recommendation`, or `nextAction`
+- tools/list feedback shape: client name, command/args shape, visible tool
+  count, visible tool names, and returned `error.message` only
 - synthetic input shape: risk flags, workflow type, review owner, and send mode
   only
 - CRM note feedback shape: masked note label, channel, personal-data yes/no,
