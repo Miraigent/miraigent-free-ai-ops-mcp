@@ -362,6 +362,16 @@ pattern belongs in a public FAQ, internal FAQ, or human-review rule. For
 `ai_safe_crm_note`, check that facts, AI suggestions, human decisions, and next
 actions stay in separate fields.
 
+To verify the FAQ review result without copying the wrapped JSON-RPC response,
+run the bundled public sample and print only the returned recommended status:
+
+    npx -y free-ai-ops-mcp@npm:@miraigent/free-ai-ops-mcp < examples/faq-candidate-review-json-rpc-session/sample-session.jsonl | tail -n 1 | node -e 'process.stdin.on("data", c => { const r = JSON.parse(c); console.log(JSON.parse(r.result.content[0].text).recommendedStatus); })'
+
+That prints `public_faq_candidate` for the synthetic pricing-plan question. If
+your repeated-question workflow needs a different status, share only the
+question-pattern label, risk level, expected status, and returned
+`recommendedStatus` in a public issue.
+
 If the status is surprising, open a Tried It feedback issue with synthetic input
 only. The most useful report says which status you expected, which status you
 received, and what extra rule or explanation would have made the result easier

@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.67] - 2026-08-14
+
+### Changed
+
+- Added a copy-safe README command for extracting only the
+  `faq_candidate_review` recommended status from the bundled JSON-RPC session,
+  with smoke-test coverage so FAQ feedback can stay public-safe.
+
 ## [0.1.66] - 2026-08-13
 
 ### Changed
