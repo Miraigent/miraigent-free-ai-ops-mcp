@@ -4,6 +4,10 @@ import { readFile } from 'node:fs/promises';
 
 const packageJson = JSON.parse(await readFile(new URL('../package.json', import.meta.url), 'utf8'));
 const rootReadme = await readFile(new URL('../README.md', import.meta.url), 'utf8');
+const promptRiskReadme = await readFile(
+  new URL('../examples/prompt-risk-json-rpc-session/README.md', import.meta.url),
+  'utf8'
+);
 const candidateRequestTemplate = await readFile(
   new URL('../.github/ISSUE_TEMPLATE/free_mcp_candidate_request.md', import.meta.url),
   'utf8'
@@ -68,6 +72,10 @@ assert.match(rootReadme, /Do not paste the original prompt/);
 assert.match(rootReadme, /examples\/prompt-risk-json-rpc-session\/sample-session\.jsonl \| tail -n 1 \| node -e/);
 assert.match(rootReadme, /result\.recommendation \+ " " \+ result\.riskFlags\.join\(","\)/);
 assert.match(rootReadme, /stop_before_ai_use customer_facing,sensitive_data_possible/);
+assert.match(promptRiskReadme, /To inspect only the public-safe recommendation and risk flags/);
+assert.match(promptRiskReadme, /examples\/prompt-risk-json-rpc-session\/sample-session\.jsonl \| tail -n 1 \| node -e/);
+assert.match(promptRiskReadme, /result\.recommendation \+ " " \+ result\.riskFlags\.join\(","\)/);
+assert.match(promptRiskReadme, /stop_before_ai_use customer_facing,sensitive_data_possible/);
 assert.match(rootReadme, /For public `ai_safe_crm_note` feedback/);
 assert.match(rootReadme, /masked note label/);
 assert.match(rootReadme, /returned `crmNote\.nextAction`/);

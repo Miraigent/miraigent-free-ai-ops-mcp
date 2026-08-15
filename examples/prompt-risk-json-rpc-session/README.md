@@ -24,6 +24,15 @@ include a `prompt_risk_review` result with:
 - riskFlags: customer_facing and sensitive_data_possible
 - boundary: this tool is a prompt risk helper and does not call an AI API
 
+To inspect only the public-safe recommendation and risk flags from the final
+response:
+
+    npx -y free-ai-ops-mcp@npm:@miraigent/free-ai-ops-mcp < examples/prompt-risk-json-rpc-session/sample-session.jsonl | tail -n 1 | node -e 'process.stdin.on("data", c => { const r = JSON.parse(c); const result = JSON.parse(r.result.content[0].text); console.log(result.recommendation + " " + result.riskFlags.join(",")); })'
+
+That prints:
+
+    stop_before_ai_use customer_facing,sensitive_data_possible
+
 ## Public-Safe Feedback
 
 If the output is unclear, open a Tried It feedback issue and include only:

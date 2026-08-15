@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.68] - 2026-08-15
+
+### Changed
+
+- Added a copy-safe status extraction command to the `prompt_risk_review`
+  JSON-RPC example README, with smoke-test coverage so users can confirm the
+  recommendation and risk flags without sharing a full MCP response.
+
 ## [0.1.67] - 2026-08-14
 
 ### Changed
