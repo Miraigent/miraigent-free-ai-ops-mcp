@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.69] - 2026-08-16
+
+### Changed
+
+- Added a copy-safe tools-list example README command for printing only the
+  public MCP tool names, with smoke-test coverage so desktop client feedback
+  can avoid full JSON-RPC logs.
+
 ## [0.1.68] - 2026-08-15
 
 ### Changed

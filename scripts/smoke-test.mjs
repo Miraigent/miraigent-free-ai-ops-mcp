@@ -8,6 +8,10 @@ const promptRiskReadme = await readFile(
   new URL('../examples/prompt-risk-json-rpc-session/README.md', import.meta.url),
   'utf8'
 );
+const toolsListReadme = await readFile(
+  new URL('../examples/tools-list-json-rpc-session/README.md', import.meta.url),
+  'utf8'
+);
 const candidateRequestTemplate = await readFile(
   new URL('../.github/ISSUE_TEMPLATE/free_mcp_candidate_request.md', import.meta.url),
   'utf8'
@@ -76,6 +80,10 @@ assert.match(promptRiskReadme, /To inspect only the public-safe recommendation a
 assert.match(promptRiskReadme, /examples\/prompt-risk-json-rpc-session\/sample-session\.jsonl \| tail -n 1 \| node -e/);
 assert.match(promptRiskReadme, /result\.recommendation \+ " " \+ result\.riskFlags\.join\(","\)/);
 assert.match(promptRiskReadme, /stop_before_ai_use customer_facing,sensitive_data_possible/);
+assert.match(toolsListReadme, /To print only the public tool names/);
+assert.match(toolsListReadme, /examples\/tools-list-json-rpc-session\/sample-session\.jsonl \| tail -n 1 \| node -e/);
+assert.match(toolsListReadme, /r\.result\.tools\.map\(t => t\.name\)\.join\("\\n"\)/);
+assert.match(toolsListReadme, /Use that four-line output in public feedback instead of desktop client logs/);
 assert.match(rootReadme, /For public `ai_safe_crm_note` feedback/);
 assert.match(rootReadme, /masked note label/);
 assert.match(rootReadme, /returned `crmNote\.nextAction`/);
