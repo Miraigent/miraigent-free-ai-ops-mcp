@@ -43,6 +43,17 @@ field and one sentence explaining why that synthetic example should proceed,
 require review, or stop. Keep the explanation about the sample behavior only,
 not your private workflow rules.
 
+If the issue is `Unknown tool: <name>`, include only this public-safe copy block:
+
+- requested synthetic tool name:
+- JSON-RPC request id:
+- returned `error.message`:
+- visible tool count from `tools/list`:
+- visible tool names from `tools/list`:
+
+Do not paste the full MCP client log or private workflow name to explain a tool
+name mismatch.
+
 ## Boundary check
 
 - [ ] No secrets, tokens, passwords, cookies, or credentials.

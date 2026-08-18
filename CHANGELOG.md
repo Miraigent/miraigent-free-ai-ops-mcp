@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.1.70] - 2026-08-18
+
+### Changed
+
+- Clarified the public bug report template for `Unknown tool` reports so users
+  can share the requested synthetic tool name, JSON-RPC request id,
+  `error.message`, and visible `tools/list` names without pasting private MCP
+  client logs.
+
 ## [0.1.69] - 2026-08-16
 
 ### Changed

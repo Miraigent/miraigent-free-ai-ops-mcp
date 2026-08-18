@@ -123,6 +123,11 @@ assert.match(
 assert.match(bugReportTemplate, /If the issue is a wrong review decision/);
 assert.match(bugReportTemplate, /expected public decision\s+field/);
 assert.match(bugReportTemplate, /not your private workflow rules/);
+assert.match(bugReportTemplate, /If the issue is `Unknown tool: <name>`/);
+assert.match(bugReportTemplate, /requested synthetic tool name/);
+assert.match(bugReportTemplate, /JSON-RPC request id/);
+assert.match(bugReportTemplate, /visible tool names from `tools\/list`/);
+assert.match(bugReportTemplate, /tool\s+name mismatch/);
 assert.match(triedItFeedbackTemplate, /Useful minimal examples:/);
 assert.match(triedItFeedbackTemplate, /free-ai-ops-mcp@npm:@miraigent\/free-ai-ops-mcp/);
 assert.match(triedItFeedbackTemplate, /desktop MCP args shape/);
