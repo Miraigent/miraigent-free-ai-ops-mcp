@@ -131,6 +131,9 @@ assert.match(
 assert.match(bugReportTemplate, /If the issue is a wrong review decision/);
 assert.match(bugReportTemplate, /expected public decision\s+field/);
 assert.match(bugReportTemplate, /not your private workflow rules/);
+assert.match(bugReportTemplate, /bundled public `\.jsonl` examples/);
+assert.match(bugReportTemplate, /example path, response line number, first decision field checked/);
+assert.match(bugReportTemplate, /Do not paste the full JSON-RPC response/);
 assert.match(bugReportTemplate, /If the issue is `Unknown tool: <name>`/);
 assert.match(bugReportTemplate, /requested synthetic tool name/);
 assert.match(bugReportTemplate, /JSON-RPC request id/);

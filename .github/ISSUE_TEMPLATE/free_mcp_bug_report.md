@@ -43,6 +43,11 @@ field and one sentence explaining why that synthetic example should proceed,
 require review, or stop. Keep the explanation about the sample behavior only,
 not your private workflow rules.
 
+If the issue appears in one of the bundled public `.jsonl` examples, include
+only the example path, response line number, first decision field checked, and
+the public status or error field. Do not paste the full JSON-RPC response when
+those four fields identify the failing step.
+
 If the issue is `Unknown tool: <name>`, include only this public-safe copy block:
 
 - requested synthetic tool name:
