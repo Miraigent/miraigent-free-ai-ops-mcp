@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.1.71] - 2026-08-19
+
+### Changed
+
+- Added a copy-safe status extraction command to the `faq_candidate_review`
+  JSON-RPC example README, with smoke-test coverage so users can confirm the
+  recommended FAQ status without sharing a full MCP response or support inbox
+  export.
+
 ## [0.1.70] - 2026-08-18
 
 ### Changed
