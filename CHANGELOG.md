@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.1.72] - 2026-08-20
+
+### Changed
+
+- Clarified the Tried It feedback template for version-mismatch reports so users
+  can share the `npm view` version, `--help` header version, MCP `initialize`
+  serverInfo.version, and desktop-client stale-cache signal without pasting
+  private MCP client logs.
+
 ## [0.1.71] - 2026-08-19
 
 ### Changed

@@ -27,6 +27,9 @@ Useful minimal examples:
 - returned field: `gateStatus`, `recommendedStatus`, `recommendation`, or `nextAction`
 - tools/list feedback shape: client name, command/args shape, visible tool
   count, visible tool names, and returned `error.message` only
+- version mismatch feedback shape: `npm view` version, `--help` header version,
+  `initialize` serverInfo.version, and whether only a desktop MCP client appears
+  stale
 - synthetic input shape: risk flags, workflow type, review owner, and send mode
   only
 - CRM note feedback shape: masked note label, channel, personal-data yes/no,
